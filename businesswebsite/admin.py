@@ -1,7 +1,5 @@
 from django.contrib import admin
 from .settings import COMPANY_NAME
-from django.template.response import TemplateResponse
-from django.views.decorators.cache import never_cache
 from mainsite import models
 from django.template.response import TemplateResponse
 from django.utils.translation import gettext as _

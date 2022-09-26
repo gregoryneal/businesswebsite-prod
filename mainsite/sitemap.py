@@ -1,8 +1,6 @@
-from tkinter import W
 from django.contrib.sitemaps import Sitemap
 from django.urls.base import reverse
-from .models import KnowledgeBaseEntry, FAQEntry
-from businesswebsite.settings import SITEMAP_DEFAULT_LAST_MOD
+from .models import KnowledgeBaseEntry
 
 class ArticleSitemap(Sitemap):
     protocol = "https"
