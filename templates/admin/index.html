@@ -1,0 +1,17 @@
+{% extends "admin/index.html" %}
+{% load static %}
+
+
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'calendar.css' %}">
+{% endblock %}
+
+{% block footer %}
+{{ block.super }}
+
+{% endblock %}
+
+{% block extra_scripts %}
+{% endblock %}

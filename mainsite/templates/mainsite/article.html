@@ -1,0 +1,51 @@
+{% extends "mainsite/base.html" %}
+
+{% block links %}
+<link href="/static/mainsite/css/article.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+{% block meta %}
+<title>{{entry.short_title}}</title>
+<meta name="description" content="{{entry.short_description|truncatechars:160}}">
+{% endblock %}
+
+{% load service_extras %}
+{% load service_extras %}
+{% load static %}
+
+{% block content %}
+<div id="subheader-image-outer">       
+    <div id="subheader-inner" class="overlay-parent">      
+    
+        <div id="subheader-inner-content" class="sh-content z-1">
+
+            <div>
+                <h1 class="title h1">
+                    {{entry.medium_title}}
+                </h1>
+            </div>
+
+            <div class="subtitle">
+                <p>
+                {{entry.short_description}}
+                </p>
+            </div>
+
+            <hr class="hr-text" data-content="READ ON">
+
+            <div class="content">
+                <div class="article-content">
+                    {{entry.entry|markdownify|safe}}
+                </div>
+            </div>
+        </div>
+        <div class="overlay-parent">
+            <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule z-3" onload="this.style.opacity=1" alt="Divider Image" />
+            <div>
+                <img src={% static "mainsite/images/solar2.jpg" %} id="subheader-image" class="easeload" onload="this.style.opacity=1" alt="Header Image" />
+                <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule flip-both bottom-header-image" onload="this.style.opacity=1" alt="Divider Image" />
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

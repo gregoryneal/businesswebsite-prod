@@ -1,0 +1,63 @@
+{% extends "mainsite/base.html" %}
+
+{% block links %}
+<link href="/static/mainsite/css/knowledgebase.css" rel="stylesheet" />
+{% endblock %}
+{% block meta %}
+<title>Knowledge Base | Learn about solar, batteries, and more</title>
+<meta name="description" content="A collection of articles and blog posts about the less often spoken about subjects within overlanding, mainly the power aspects. Here we talk about solar systems, all types of batteries, heaters and air conditioners." >
+{% endblock %}
+
+{% load service_extras %}
+{% load static %}
+
+{% block content %}
+<div id="subheader-image-outer">       
+    <div id="subheader-inner" class="overlay-parent">      
+    
+        <div id="subheader-inner-content" class="sh-content z-1">
+
+            <h1 class="h1">Knowledge base</h1>
+
+            <div id="sh-body" class="z-3">
+                {% for entry in kbase %}
+                {% if entry.short_title != "How To" or entry.draft != True or user.is_superuser %}
+                <form action="{% url 'article' entry.slug %}" method="get">
+                    <button class="k-entry" type="submit">
+                        <div class="overlay-parent">
+                            <div class="thumbnail">
+                                <img src={% static "mainsite/images/solar.jpg" %} alt="Thumbnail image {{entry.id}}" />
+                            </div>
+                            <div class="post-content">
+                                <div class="post-slug">
+                                    {{entry.short_title}}
+                                </div>
+                                <div class="post-overview">
+                                    <div class="post-title text-dark">
+                                        {{entry.medium_title}}
+                                    </div>
+                                    <div class="post-text text-dark">
+                                        {{entry.short_description}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </form>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="overlay-parent">
+            <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule z-3" onload="this.style.opacity=1" alt="Divider Image" />
+            <div>
+                <img src={% static "mainsite/images/solar2.jpg" %} id="subheader-image" class="easeload" onload="this.style.opacity=1" alt="Header Image" />
+                <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule flip-both bottom-header-image" onload="this.style.opacity=1" alt="Divider Image" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

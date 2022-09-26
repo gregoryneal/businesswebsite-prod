@@ -1,0 +1,284 @@
+{% extends "mainsite/base.html" %}
+
+{% block links %}
+<link href="/static/mainsite/css/about.css" type="text/css" rel="stylesheet" >
+{% endblock %}
+{% block meta %}
+<title>About {{company_name}} | Single day installations | Contact us today</title>
+<meta name="description" content="About {{company_name}}, how we work and what you can expect from us.">
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Electrician",
+      "address": "None",
+      "name": "{{company_name}}",
+      "openingHours": [
+        "Mo-Su 10:00-5:00"
+      ],
+      "priceRange": "$$$",
+      "url": "{{request.get_host}}",
+    }
+</script>
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div id="subheader-image-outer">       
+    <div id="subheader-inner" class="overlay-parent">      
+    
+        <div id="subheader-inner-content" class="sh-content z-1">
+            
+            <hr class="hr-text">
+            <h3 class="text-center h2">About {{company_name}}</h3>
+            <hr class="hr-text">
+            <h6 class="sh-subtitle text-center h6">What we do.</h6>
+            <h2 class="sh-header h3">Customized overland installations</h2>
+            <h3 class="sh-subtitle h6">We install custom overlanding and camping solutions to your vehicles</h3>
+            <hr class="hr-text">
+            <div id="sh-body" class="z-3">
+                <div id="about-container">
+                    <div class="bg-tan">
+                        <img class="about-image" src={% static 'mainsite/images/splash-image.png' %} alt="about header image">                        
+                        <h2 class="sh-header text-center h2">Our capabilities</h2>
+                        <div id="about-text-list">
+                            <p class="easeload-ltr ad-0">Solar panels</p>
+                            <p class="easeload-ltr ad-01">Solar controllers</p>
+                            <p class="easeload-ltr ad-02">New battery installs</p>
+                            <p class="easeload-ltr ad-03">Battery expansions</p>
+                            <p class="easeload-ltr ad-04">Heaters</p>
+                            <p class="easeload-ltr ad-05">Air conditioning</p>
+                            <p class="easeload-ltr ad-06">Custom woodworking</p>
+                        </div>
+                    </div>
+                    <div class="bg-b hww-title" id="how-we-work-container">
+                        <img class="about-image" src={% static 'mainsite/images/clean-cabling3.jpg' %} alt="how we work title">
+                        <h5 class="sh-header text-center text-light fs-xxxl h1">How we work</h5>
+                        
+                    </div>                    
+                    <div class="bg-lb">
+
+                        <div id="how-we-work-list"> 
+                            <div class="hww-item bg-lg-1 flex-col">
+                                <p class="fw-700 fs-lg hwwi-title">Contact us.</p>
+                                <svg class="hwwi hwwi-fill" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 256 256" xml:space="preserve">
+
+                                    <defs>
+                                    </defs>
+                                    <g style="stroke: red; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(-30 -20) scale(3 3)">
+                                        <path d="M 82.127 71.258 H 26.728 c -4.341 0 -7.873 -3.532 -7.873 -7.873 v -10.16 c 0 -0.828 0.671 -1.5 1.5 -1.5 s 1.5 0.672 1.5 1.5 v 10.16 c 0 2.687 2.186 4.873 4.873 4.873 h 55.399 c 2.687 0 4.873 -2.187 4.873 -4.873 v -36.77 c 0 -2.687 -2.187 -4.873 -4.873 -4.873 H 26.728 c -2.687 0 -4.873 2.186 -4.873 4.873 v 10.038 c 0 0.829 -0.671 1.5 -1.5 1.5 s -1.5 -0.671 -1.5 -1.5 V 26.615 c 0 -4.341 3.532 -7.873 7.873 -7.873 h 55.399 c 4.341 0 7.873 3.532 7.873 7.873 v 36.77 C 90 67.726 86.468 71.258 82.127 71.258 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                                        <path d="M 63.732 45 l 16.726 -15.344 c 0.61 -0.56 0.651 -1.509 0.092 -2.12 c -0.56 -0.61 -1.508 -0.65 -2.119 -0.091 L 54.427 49.466 L 30.425 27.445 c -0.611 -0.559 -1.559 -0.519 -2.12 0.091 c -0.56 0.61 -0.519 1.56 0.091 2.12 L 45.122 45 L 28.396 60.345 c -0.61 0.561 -0.651 1.509 -0.091 2.119 c 0.296 0.323 0.7 0.486 1.106 0.486 c 0.362 0 0.726 -0.131 1.014 -0.395 l 16.916 -15.52 l 6.072 5.571 c 0.286 0.263 0.65 0.395 1.014 0.395 s 0.728 -0.132 1.014 -0.395 l 6.073 -5.571 l 16.917 15.52 c 0.288 0.264 0.651 0.395 1.014 0.395 c 0.405 0 0.81 -0.163 1.105 -0.486 c 0.56 -0.61 0.519 -1.559 -0.092 -2.119 L 63.732 45 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                                        <path d="M 25.423 46.5 H 7.539 c -0.829 0 -1.5 -0.671 -1.5 -1.5 s 0.671 -1.5 1.5 -1.5 h 17.885 c 0.829 0 1.5 0.671 1.5 1.5 S 26.252 46.5 25.423 46.5 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                                        <path d="M 12.497 36.016 H 1.5 c -0.829 0 -1.5 -0.671 -1.5 -1.5 s 0.671 -1.5 1.5 -1.5 h 10.997 c 0.829 0 1.5 0.671 1.5 1.5 S 13.326 36.016 12.497 36.016 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                                        <path d="M 12.497 56.984 H 4.394 c -0.829 0 -1.5 -0.672 -1.5 -1.5 s 0.671 -1.5 1.5 -1.5 h 8.104 c 0.829 0 1.5 0.672 1.5 1.5 S 13.326 56.984 12.497 56.984 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                                    </g>
+                                </svg>
+                                <p>Let us know about your project through the <a href={% url 'quote'%}>request quote</a> or <a href={% url 'contact' %}>contact</a> forms.</p>
+                            </div>
+                            <div class="hww-item bg-lg-1 flex-col">
+                                <p class="fw-700 fs-lg hwwi-title">We will be in touch.</p>
+                                <svg class="hwwi hwwi-fill" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                    <circle cx="102.272" cy="50.448" r="50.448"/>
+                                    <g>
+                                        <path d="M104.656,218.176l48.752-105.68c0,0,51.136,0.688,51.136,47.728s0,57.952,0,57.952   S104.32,218.176,104.656,218.176z"/>
+                                        <path d="M99.888,218.176l-48.752-105.68c0,0-51.136,0.688-51.136,47.728s0,57.952,0,57.952   S100.224,218.176,99.888,218.176z"/>
+                                    </g>
+                                    <polygon points="102.272,112.496 137.376,112.496 102.272,190.224 67.152,112.496 "/>
+                                    <circle cx="409.728" cy="344.272" r="50.448"/>
+                                    <g>
+                                        <path d="M412.112,512l48.752-105.68c0,0,51.136,0.688,51.136,47.728S512,512,512,512   S411.776,512,412.112,512z"/>
+                                        <path d="M407.344,512l-48.752-105.68c0,0-51.136,0.688-51.136,47.728s0,57.952,0,57.952   S407.68,512,407.344,512z"/>
+                                    </g>
+                                    <g>
+                                        <polygon points="409.728,406.32 444.848,406.32 409.728,484.048 374.624,406.32  "/>
+                                        <polygon points="281.84,453.328 93.84,453.328 93.84,244.592 109.84,244.592 109.84,437.328 281.84,437.328     "/>
+                                    </g>                                    
+                                </svg>
+                                <p>We will request any additional information and then send you a quote.</p>
+                            </div>
+                            <div class="hww-item bg-lg-1 flex-col">
+                                <p class="fw-700 fs-lg hwwi-title">If you feel good.</p>
+                                <svg class="hwwi hwwi-stroke" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(2 3)"><path d="m11.6427217 13.7567397-3.14377399-1.2567396h-4v-7.00000002h2l2.80105246-5.5c.57989907 0 1.07487363.2050252 1.48492373.61507546.4100508.41005058.6150761.90502516.6150755 1.48492425l-.8999994 2.40000029 4.0310597 1.34368655c.9979872.33266243 1.5591794 1.37584131 1.3086286 2.37964122l-.0684258.21997226-1.5536355 4.14302809c-.3878403 1.0342407-1.5406646 1.5582517-2.5749053 1.1704115z"/><path d="m1.5 4.5h2c.55228475 0 1 .44771525 1 1v8c0 .5522847-.44771525 1-1 1h-2c-.55228475 0-1-.4477153-1-1v-8c0-.55228475.44771525-1 1-1z"/></g></svg>
+                                <p>We can collect a deposit<sup><a href="" onclick="return false;" title="50%">[1]</a></sup> and schedule your appointment.</p>
+                            </div>
+                            <div class="hww-item bg-lg-1 flex-col">
+                                <p class="fw-700 fs-lg hwwi-title">On your build day.</p>
+                                <svg class="hwwi hwwi-stroke hwwi-color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" baseProfile="tiny" id="Layer_1" x="0px" y="0px" viewBox="0 0 256 256" xml:space="preserve">
+
+
+                                    <g style="transform: translate(0, -40px);" fill-type="evenodd" fill="currentColor">
+                                        <ellipse fill="none" fill-type="evenodd" cx="205.917" cy="229.949" rx="12" ry="12.006"/>
+                                        <ellipse fill="none" cx="65.917" cy="229.949" rx="12" ry="12.006"/>
+                                        <polygon fill="none" points="96,131.97 96,168 178,168 154,131.97  "/>
+                                        <polygon fill="none" points="28,138 28,168 84,168 84,131.97 28,131.97  "/>
+                                        
+                                        <path d="M65.917,203.935c-14.336,0-26,11.669-26,26.014C39.917,244.294,51.664,256,66,256s25.917-11.706,25.917-26.051   C91.917,215.604,80.253,203.935,65.917,203.935z M65.917,241.955c-6.617,0-12-5.385-12-12.006c0-6.62,5.383-12.006,12-12.006   s12,5.386,12,12.006S72.534,241.955,65.917,241.955z"/>
+                                        <path d="M244,208.011v-30.016c0-5.523-4.48-9.995-10-9.995h-40l-31.5-48H157h-6.5H28h-2H16v9.969V138v10H8c-4.42,0-8,3.56-8,7.983   v40.022C0,200.427,3.58,204,8,204h8v20h16.458c2.8-15.959,16.702-28.066,33.462-28.066c16.75,0,30.708,12.107,33.518,28.066h72.958   c2.8-15.959,16.764-28.066,33.524-28.066c16.75,0,30.624,12.107,33.434,28.066H248c4.42,0,8-3.563,8-7.985v-8.004H244z M84,168H28   v-30v-6.03h56V168z M96,168v-36.03h58L178,168H96z"/>
+                                        <path d="M205.917,203.935c-14.337,0-26,11.669-26,26.014C179.917,244.294,191.663,256,206,256   c14.337,0,25.917-11.706,25.917-26.051C231.917,215.604,220.254,203.935,205.917,203.935z M205.917,241.955   c-6.617,0-12-5.385-12-12.006c0-6.62,5.383-12.006,12-12.006s12,5.386,12,12.006S212.534,241.955,205.917,241.955z"/>
+                                        <polygon points="134.177,82.344 128.232,75.078 111.647,75.078 115.046,82.344  "/>
+                                        <polygon points="92.142,94.962 115.699,94.962 111.537,84.277 91.726,84.277  "/>
+                                        <polygon points="110.783,82.344 107.952,75.078 91.366,75.078 91.649,82.344  "/>
+                                        <polygon points="130.399,115.172 161.038,115.172 146.919,97.916 122.329,97.916  "/>
+                                        <polygon points="92.257,97.916 92.93,115.172 123.573,115.172 116.851,97.916  "/>
+                                        <polygon points="120.946,94.962 144.503,94.962 135.759,84.277 115.948,84.277  "/>
+                                        <polygon points="87.674,75.078 71.087,75.078 68.256,82.344 87.391,82.344  "/>
+                                        <polygon points="63.09,84.277 43.282,84.277 34.538,94.962 58.092,94.962  "/>
+                                        <polygon points="86.896,94.962 87.313,84.277 67.503,84.277 63.339,94.962  "/>
+                                        <polygon points="56.71,97.916 32.121,97.916 18,115.172 48.639,115.172  "/>
+                                        <polygon points="67.392,75.078 50.809,75.078 44.863,82.344 63.994,82.344  "/>
+                                        <polygon points="55.465,115.172 86.108,115.172 86.783,97.916 62.189,97.916  "/>
+                                    </g>
+                                </svg>
+                                <p>Our technicians will be at your home early, be prepared!</p>
+                            </div>
+                            <div class="hww-item bg-lg-1 flex-col">
+                                <p class="fw-700 fs-lg hwwi-title">Once we are done.</p>
+                                <svg class="hwwi hwwi-stroke hwwi-fill" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;fill:currentColor;" xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <path d="M501.801,363.092h-37.737c-5.632,0-10.199,4.566-10.199,10.199c0,5.633,4.567,10.199,10.199,10.199h37.737    c5.632,0,10.199-4.566,10.199-10.199C512,367.658,507.433,363.092,501.801,363.092z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M416.128,363.092h-77.368l-94.925-94.925c-3.035-3.034-7.503-3.75-11.221-2.161c-1.733,0.433-3.377,1.316-4.732,2.671    l-94.417,94.415H62.361L94.853,330.6l11.147,11.147c1.992,1.991,4.601,2.986,7.212,2.986c2.611,0,5.22-0.995,7.212-2.987    c3.983-3.983,3.983-10.441,0-14.425l-18.359-18.359c-3.984-3.983-10.44-3.983-14.425,0l-54.056,54.056    c-0.023,0.023-0.043,0.049-0.065,0.072H10.199C4.567,363.091,0,367.657,0,373.29s4.567,10.199,10.199,10.199h405.928    c5.632,0,10.199-4.566,10.199-10.199S421.76,363.092,416.128,363.092z M162.313,363.092l73.798-73.798l73.798,73.798H162.313z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M242.745,137.689h-33.491c-4.882-29.469-30.534-52.016-61.366-52.016c-34.306,0-62.215,27.909-62.215,62.215    c0,34.306,27.909,62.215,62.215,62.215c30.831,0,56.482-22.547,61.365-52.016h33.492c5.632,0,10.199-4.566,10.199-10.199    C252.944,142.255,248.377,137.689,242.745,137.689z M147.888,189.705c-23.057,0-41.817-18.759-41.817-41.817    c0-23.057,18.759-41.817,41.817-41.817c23.057,0,41.817,18.759,41.817,41.817C189.705,170.946,170.946,189.705,147.888,189.705z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M147.888,40.797c-5.632,0-10.199,4.566-10.199,10.199v12.239c0,5.633,4.567,10.199,10.199,10.199    c5.632,0,10.199-4.566,10.199-10.199V50.996C158.088,45.363,153.52,40.797,147.888,40.797z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M95.663,79.797l-8.654-8.654c-3.984-3.982-10.44-3.982-14.425,0c-3.983,3.983-3.983,10.441,0,14.425l8.655,8.654    c1.992,1.991,4.602,2.987,7.212,2.987c2.61,0,5.22-0.996,7.212-2.987C99.646,90.238,99.646,83.78,95.663,79.797z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M65.295,49.428l-3.308-3.308c-3.982-3.982-10.441-3.983-14.424,0.001c-3.983,3.983-3.983,10.441,0.001,14.424l3.309,3.309    c1.991,1.991,4.601,2.986,7.211,2.986s5.221-0.996,7.212-2.988C69.279,59.869,69.279,53.411,65.295,49.428z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M63.235,135.649H50.996c-5.632,0-10.199,4.566-10.199,10.199c0,5.633,4.567,10.199,10.199,10.199h12.239    c5.632,0,10.199-4.566,10.199-10.199C73.434,140.216,68.867,135.649,63.235,135.649z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M94.221,198.074c-3.983-3.983-10.439-3.983-14.424,0l-8.654,8.654c-3.983,3.983-3.983,10.441,0,14.424    c1.992,1.992,4.602,2.987,7.212,2.987c2.61,0,5.22-0.996,7.212-2.987l8.654-8.654C98.204,208.515,98.204,202.056,94.221,198.074z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M145.849,220.303c-5.632,0-10.199,4.566-10.199,10.199v12.239c0,5.633,4.567,10.199,10.199,10.199    c5.632,0,10.199-4.566,10.199-10.199v-12.239C156.048,224.869,151.481,220.303,145.849,220.303z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M221.15,208.17l-8.654-8.654c-3.984-3.983-10.44-3.983-14.424,0c-3.983,3.983-3.983,10.441,0,14.425l8.654,8.654    c1.992,1.991,4.602,2.987,7.212,2.987s5.22-0.996,7.212-2.987C225.133,218.612,225.133,212.154,221.15,208.17z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M222.593,72.586c-3.982-3.983-10.438-3.983-14.425,0l-8.654,8.654c-3.983,3.983-3.983,10.441,0,14.424    c1.993,1.992,4.603,2.987,7.213,2.987s5.22-0.996,7.212-2.987l8.654-8.654C226.575,83.027,226.575,76.568,222.593,72.586z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M318.215,450.805H125.45c-5.632,0-10.199,4.566-10.199,10.199c0,5.633,4.567,10.199,10.199,10.199h192.765    c5.632,0,10.199-4.566,10.199-10.199C328.414,455.371,323.847,450.805,318.215,450.805z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M81.594,450.805H53.036c-5.632,0-10.199,4.566-10.199,10.199c0,5.633,4.567,10.199,10.199,10.199h28.558    c5.632,0,10.199-4.566,10.199-10.199C91.793,455.371,87.226,450.805,81.594,450.805z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M341.673,410.008h-28.558c-5.632,0-10.199,4.566-10.199,10.199c0,5.633,4.567,10.199,10.199,10.199h28.558    c5.632,0,10.199-4.566,10.199-10.199C351.872,414.574,347.305,410.008,341.673,410.008z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M423.267,111.171h-57.116c-5.632,0-10.199,4.566-10.199,10.199c0,5.633,4.567,10.199,10.199,10.199h57.116    c5.632,0,10.199-4.566,10.199-10.199C433.466,115.737,428.899,111.171,423.267,111.171z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M486.502,111.171h-21.418c-5.632,0-10.199,4.566-10.199,10.199c0,5.633,4.567,10.199,10.199,10.199h21.418    c5.632,0,10.199-4.566,10.199-10.199C496.701,115.737,492.134,111.171,486.502,111.171z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M400.829,185.625h-57.116c-5.632,0-10.199,4.566-10.199,10.199s4.567,10.199,10.199,10.199h57.116    c5.632,0,10.199-4.566,10.199-10.199S406.461,185.625,400.829,185.625z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M301.896,185.625h-21.418c-5.632,0-10.199,4.566-10.199,10.199s4.567,10.199,10.199,10.199h21.418    c5.632,0,10.199-4.566,10.199-10.199S307.528,185.625,301.896,185.625z"/>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Go out and enjoy it!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-b hww-title">
+                        <h2 class="sh-header text-center text-light fs-xxxl h1">Leadership</h2>
+                    </div>
+                    <div class="bg-b" id="leadership">
+                        <div class="leadership-display overlay-parent">
+                            <div class="leadership-name">
+                                <h5 class="text-light h5">Greg Pritchard</h5>
+                            </div>
+                            <div class="leadership-image">                      
+                                <img src={% static "mainsite/images/person1.png" %} alt="Greg Pritchard">
+                            </div>
+                        </div>
+                        <div class="leadership-display overlay-parent">
+                            <div class="leadership-name">
+                                <h5 class="text-light h5">Tim Lim</h5>
+                            </div>      
+                            <div class="leadership-image">                      
+                                <img src={% static "mainsite/images/person2.png" %} alt="Tim Lim">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-b hww-title">
+                        <h2 class="sh-header text-center text-light fs-xxxl h1">Area of service</h2>
+                    </div>
+                    <div class="bg-lb">
+                        <img class="aoo-image easeload-rtl ad-04" src={% static "mainsite/images/area of operation.png" %} alt="Area of Operations">
+                    </div>
+                </div>
+            </div>
+
+            <div id="sh-buttons-holder">
+                <button onclick="location.href={% url 'quote' %}" class="brand-bg-primary m-auto">Get a free quote</button>
+            </div>
+        </div>
+        <div class="overlay-parent">
+            <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule z-3" onload="this.style.opacity=1" alt="Divider Image"/>
+            <div>
+                <img src={% static "mainsite/images/splash-image.png" %} id="subheader-image" class="easeload" onload="this.style.opacity=1" alt="Header Image" />
+                <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule flip-both bottom-header-image" onload="this.style.opacity=1" alt="Divider Image" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<hr class="hr-text"/>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+#why-us {
+  height: 600px;
+  display: grid;
+  width: 100%;
+  text-align: center;
+  flex: 1;
+  margin-bottom: 40px;
+}
+
+#why-reasons {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.why-reason {
+  display: flex;
+  background-color: whitesmoke;
+  height: 200px;
+  width: 80%;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow-1);
+  text-align: justify;
+  padding: 0 10px 0 10px;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #why-reasons {    
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  }
+
+  .why-reason.left {
+      justify-self: left;
+  }
+
+  .why-reason.right {
+      justify-self: right;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+
+  .why-reason {
+        width: 400px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}
+
+/* Really really wide screens */
+@media (min-width: 1530px) {
+
+}
+
+
+/* OVERRIDE BOOTSTRAP STYLES HERE 
+   PLEASE PROVIDE AN EXPLANATION
+*/

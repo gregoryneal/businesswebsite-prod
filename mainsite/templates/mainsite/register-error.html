@@ -1,0 +1,41 @@
+{% extends "mainsite/base.html" %}
+
+{% load service_extras %}
+{% load static %}
+
+{% block content %}
+<div id="subheader-image-outer">       
+    <div id="subheader-inner" class="overlay-parent">      
+    
+        <div id="subheader-inner-content" class="sh-content z-1">
+            <h4 class="section-title h1">Error</h4>
+            <h4 class="section-subheader h4">There was an error registering your new account. Try again later.</h4>
+            <hr class="hr-text">
+            {% if register_form.errors %}
+                {% for field in register_form %}
+                    <ul>
+                        {% for error in field.errors %}
+                            <li>
+                                <strong>{{ error|escape }}</strong>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            {% endif %}
+            
+        </div>
+        <div class="overlay-parent">
+            <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule z-3" onload="this.style.opacity=1" alt="Divider Image" />
+            <div>
+                <img src={% static "mainsite/images/clean-cabling3.jpg" %} id="subheader-image" class="easeload" onload="this.style.opacity=1" alt="Header Image" />
+                <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule flip-both bottom-header-image" onload="this.style.opacity=1" alt="Divider Image" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

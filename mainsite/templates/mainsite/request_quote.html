@@ -1,0 +1,110 @@
+{% extends "mainsite/base.html" %}
+
+{% block links %}
+<link href="/static/mainsite/css/quote_form.css" rel="stylesheet" />
+{% endblock %}
+{% block meta %}
+<title>Request Quote | AC | Heaters | Batteries | Solar | Single day installations</title>
+<meta name="description" content="We take every project seriously, we will meticulously evaluate your requirements, plan the best build possible, and execute it quickly and professionaly with the longest lasting parts. Request a quote today." >
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div id="subheader-image-outer">       
+    <div id="subheader-inner" class="overlay-parent">      
+    
+        <div id="subheader-inner-content" class="sh-content z-1">
+            <div id="sh-body" class="z-3">
+                <div>                    
+                    {% if quote_form.errors %}
+                    {% for field in quote_form %}
+                        {% for error in field.errors %} 
+                            <div class="form-error alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                    {% endif %}
+                    <form enctype="multipart/form-data" id="quote-form" method="post">
+                        {% csrf_token %}
+                
+                        <div class="quote-big-container bs-1"> 
+                
+                            <div id="quote-page-0">
+                                <div class="quote-header brand-bg-secondary">
+                                    <h5 class="text-center h5">Request a quote today</h5>
+                                    <h6 class="sh-subtitle text-center h6">We will email you within a day.</h6>
+                                </div>
+                
+                                <div class="quote-body">
+                                    <div class="name">         
+                                        <div class="quote-form-input form-floating input-control">
+                                            {{ quote_form.name.label_tag }}
+                                            {{ quote_form.name }}
+                                        </div></div>
+                                    <div class="email">
+                                        <div class="quote-form-input form-floating input-control">
+                                            {{ quote_form.email.label_tag }}
+                                            {{ quote_form.email }}
+                                        </div></div>
+                                    <div class="phone">
+                                        <div class="quote-form-input form-floating input-control">
+                                            {{ quote_form.phone.label_tag }}
+                                            {{ quote_form.phone }}
+                                        </div></div>
+                                    <div class="message">
+                                        <div class="form-floating">
+                                            {{ quote_form.message.label_tag }}
+                                            {{ quote_form.message }}
+                                        </div>
+                                    </div>
+                                    <div class="vehicle">
+                                        <div class="form-floating">
+                                            {{ quote_form.vehicle.label_tag }}
+                                            {{ quote_form.vehicle }}
+                                        </div>
+                                    </div>
+                                    <div class="images">
+                                        <div class="form-floating images-upload-box">
+                                            <p><b>Vehicle images</b>, of interior build if any, or roof area if solar/AC work is required.</p>
+                                            <p>Accepts <b>PNG</b> or <b>JPEG</b> formats, select multiple images at a time.</p>
+                                            <div class="images-upload-button-outer">
+                                                <input type="button" id="upload-images" value="Upload Images" onclick="document.getElementById('quote-form-images').click()" />
+                                                <span id="uploaded-image-list">No images uploaded</span>
+                                                <input type="button" id="remove-images" value="Delete Images" onclick="removeImages()" />
+                                            </div>
+                                            {{ quote_form.images }}
+                                        </div>
+                                    </div>
+                                    <div class="submit">
+                                        <input type="submit" class="brand-bg-primary" id="quote-submit"></input>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </form>
+                </div>
+                <div id="sh-responsive-flex-image">
+                    <img class="easeload-rtl ad-0 bs-1" src={% static 'mainsite/images/solar.jpg' %} alt="Request Quote Image" />
+                </div>
+            </div>
+        </div>
+        <div class="overlay-parent">
+            <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule z-3" onload="this.style.opacity=1" alt="Divider Image" />
+            <div>
+                <img src={% static "mainsite/images/clean-cabling1.jpg" %} id="subheader-image" class="easeload" onload="this.style.opacity=1" alt="Header Image" />
+                <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule flip-both" style="top:-55px;" onload="this.style.opacity=1" alt="Divider Image" />
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+{{ super }}
+<script src="/static/mainsite/js/request_quote.js" type="text/javascript"></script>
+{% endblock %}

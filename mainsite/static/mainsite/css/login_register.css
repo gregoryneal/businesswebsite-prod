@@ -1,0 +1,112 @@
+/* NEW CSS -- DELETE EVERYTHING ABOVE WHEN FINISHED */
+/* Modal container
+ * fixed position
+ * 100vh 100vw
+ * top, left: 0
+*/
+
+#login-modal.show {
+    display: flex;
+    transform: translate(-54.4%, 0);
+    opacity: 1;
+}
+
+#login-modal {
+    transform: translate(-200vw, 0);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    position: fixed;
+    width: 300px;
+    height: fit-content;
+    top: 5vh;
+    left: 50vw;
+
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 15;
+    /*opacity: 0;*/
+    /*transition: transform .5s ease, opacity .5s ease;*/
+    animation-name: login-modal-open;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes login-modal-open {
+    from { transform: translate(-100%, 0) }
+    to { transform: translate(-54.4%, 0) }
+}
+
+#login-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    height: 50px;
+}
+
+.hide-login-modal {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-color: transparent;
+    border-style: none;
+}
+
+.hide-login-modal:hover {
+    cursor: pointer;
+}
+
+.hide-login-modal > svg {
+    pointer-events: none;
+}
+
+#login-body, #register-body {
+    padding: 1rem 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease, visibility .5s ease;
+}
+
+#login-body.show,
+#register-body.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#login-submit, #register-submit {
+    background-color: #00BBFF;
+    border-color: #00BBFF;
+    border-width: 0;
+    color: #FFFFFF;
+    display: block;
+    margin: 10px auto;
+    padding: 15px 50px;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 3px;
+}
+
+#login-submit:hover,
+#register-submit:hover {
+    cursor: pointer;
+    background-color: #00A4E4;
+}
+
+@media (min-width: 400px) {
+    #login-modal {
+        width: 380px;
+    }
+}
+
+@media (min-width: 600px) {
+    #login-modal {
+        width: 500px;
+    }
+}

@@ -1,0 +1,6 @@
+<div class="input-group d-flex flex-row">
+    <div class="mr-auto me-4 larger">
+        {% include "django/forms/widgets/quote_form_input.html" %}
+    </div>
+    <label class="ml-auto" {% if widget.attrs.id %} for="{{ widget.attrs.id }}"{% endif %} readonly>{{ widget.label }}</label>
+</div>

@@ -1,0 +1,224 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HG49DPN3FP"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-HG49DPN3FP');
+        </script>
+        <meta name="author" content="Greg Pritchard">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="canonical" href="{{canonical_path}}" />
+
+        <link rel="shortcut icon" type="image/png" href="/static/mainsite/images/favicon.png"/>
+        {% block meta %}
+        <meta name="description" content="Superb electrical work for your overland project, fast turnaround. {{company_name}}"
+        {% endblock %}
+        <!-- Fonts -->
+        <style>
+            @font-face {
+                font-family: 'Montserrat';
+                src: url({% static 'mainsite/fonts/Montserrat-VariableFont_wght.ttf' %}) format('truetype');
+                font-weight: 1 999;
+            }
+
+            @font-face {
+                font-family: 'Montserrat Italic';
+                src: url({% static 'mainsite/fonts/Montserrat-Italic-VariableFont_wght.ttf' %}) format('truetype');
+                font-weight: 1 999;
+            }
+        </style>
+
+        <link href="/static/mainsite/css/login_register.css" type="text/css" rel="stylesheet" />
+        <link href="/static/mainsite/css/base.css" type="text/css" rel="stylesheet" />
+        {% block links %}
+        {% endblock %}
+
+    </head>
+    <body id="preload">
+        <div id="dimmer"></div>
+        <div id="header-outer">
+            <div id="navbar-outer">
+                <div id="navbar-inner">
+                    <a href={% url 'index' %}>
+                        <img src={% static "mainsite/images/full-logo.svg" %} id="website-logo" alt="{{company_name}}"/>
+                    </a>
+                    <div id="sidebar-toggler-outer">
+                        <label><span class="sidebar-toggler-icon"></span></label>
+                    </div>                    
+
+                    <div id="sidebar">
+                        <div class="header">
+                            <h2 class="h5">{{company_name}}</h2>
+                            <button id="close-sidebar">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 489.8 489.8" xml:space="preserve">
+                                    <g>
+                                        <path d="M438.2,0H51.6C23.1,0,0,23.2,0,51.6v386.6c0,28.5,23.2,51.6,51.6,51.6h386.6c28.5,0,51.6-23.2,51.6-51.6V51.6    C489.8,23.2,466.6,0,438.2,0z M465.3,438.2c0,14.9-12.2,27.1-27.1,27.1H51.6c-14.9,0-27.1-12.2-27.1-27.1V51.6    c0-14.9,12.2-27.1,27.1-27.1h386.6c14.9,0,27.1,12.2,27.1,27.1V438.2z"/>
+                                        <path d="M319,170.8c-4.8-4.8-12.5-4.8-17.3,0l-56.8,56.8l-56.8-56.8c-4.8-4.8-12.5-4.8-17.3,0s-4.8,12.5,0,17.3l56.8,56.8    l-56.8,56.8c-4.8,4.8-4.8,12.5,0,17.3c2.4,2.4,5.5,3.6,8.7,3.6s6.3-1.2,8.7-3.6l56.8-56.8l56.8,56.8c2.4,2.4,5.5,3.6,8.7,3.6    s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-57-56.8l56.8-56.8C323.8,183.3,323.8,175.6,319,170.8z"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="body flex-col" id="sidebar-navigation-outer">
+                            <nav id="sidebar-navigation-tabs">
+                                <a href={% url 'school' %}>RV Electrical</a>
+                                <a href={% url 'services' %}>Services</a>
+                                <a href={% url 'about' %}>About Us</a>
+                                <a href={% url 'contact' %}>Contact Us</a>
+                                <a href={% url 'faq' %}>FAQ</a>
+                            </nav>
+
+                            <a id="sidebar-quote-link" href="{% url 'quote' %}">Free Quote</a>
+
+                            {% if not user.is_authenticated %}
+                            <a class="show-login-modal" href="#login-modal">Login</a>
+                            {% else %}
+                            <div id="sidebar-profile-menu">
+                            
+                                <label id="sidebar-profile-menu-label">Welcome, {{user.get_username}}!</label> 
+                                
+                                <ul id="{%if user.is_superuser%}sidebar-admin-menu-content{%else%}sidebar-profile-menu-content{%endif%}">
+                                    <li><a href="{% url 'profile' %}">Profile</a></li> 
+                                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                                    {% if user.is_superuser %}
+                                    <li><a href="{% url 'admin:index' %}">Edit Users</a></li> 
+                                    <li><a href="{% url 'myAdmin:index' %}">Edit Services</a></li>
+                                    {% endif %}
+                                </ul>                               
+                            </div>
+                            {% endif %} 
+                        </div>
+                    </div>
+
+                    <div id="nav-content">
+                        <nav id="navigation-tabs">
+                            <a href={% url 'school' %}>RV Electrical</a>
+                            <a href={% url 'services' %}>Services</a>
+                            <a href={% url 'about' %}>About Us</a>
+                            <a href={% url 'contact' %}>Contact Us</a>
+                            <a href={% url 'faq' %}>FAQ</a>
+                        </nav>
+
+                        <div id="navigation-tabs-2">
+                            {% if not user.is_authenticated %}
+                            <a class="show-login-modal" href="#login-modal">Login</a>
+                            {% else %}
+                            <div id="profile-menu">
+                                
+                                <label id="profile-menu-button" class="label">Welcome, {{user.get_username}}!</label>
+                                
+                                <ul id="{%if user.is_superuser%}admin-menu-content{%else%}profile-menu-content{%endif%}">
+                                    <li>
+                                        <a href="{% url 'profile' %}">Profile</a>
+                                    </li> 
+                                    <li>
+                                        <a href="{% url 'logout' %}">Logout</a>
+                                    </li>
+                                    {% if user.is_superuser %}
+                                    <li>
+                                        <a href="{% url 'admin:index' %}">Edit Users</a>
+                                    </li> 
+                                    <li>
+                                        <a href="{% url 'myAdmin:index' %}">Edit Services</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            {% endif %}                            
+                            <div style="line-height: 45px;">
+                                <a id="header-quote-link" href="{% url 'quote' %}">Free Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% block header_image %}
+            {% endblock %}
+        </div>
+
+        <div id="expanding-container-outer">
+        <!-- This is where view context is loaded -->
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        {% if contact_form %}
+            {% include 'contact_form.html' %}
+        {% endif %}
+
+        {% include 'login_register_modal.html' %}
+    </body>
+    <footer id="page-footer">
+        <a class="text-muted" href={% url 'index' %}>Home</a>
+        <a class="text-muted" href={% url 'quote' %}>Request Quote</a>
+        {% if not user.is_authenticated %}
+        <a href="#login-modal" class="text-muted show-login-modal">Login</a>
+        {% else %}
+        <a href="{% url 'logout' %}" class="text-muted">Logout</a>
+        {% endif %}
+        <p class="footer-company-tag">&#169; 2022 {{company_name}}</p>
+    </footer>
+    
+    <script src="/static/mainsite/js/login_register.js" type="text/javascript"></script>
+    <script src="/static/mainsite/js/contact_form.js" type="text/javascript"></script>
+    <script src="/static/mainsite/js/cookies.js" type="text/javascript"></script>
+    <script src="/static/mainsite/js/base.js" type="text/javascript"></script>
+
+    {% block scripts %}      
+    <script type="text/javascript">
+            
+        (function(window, document, undefined) {
+            if (document.body.contains(document.getElementById('no-services-card'))){
+
+                window.onload = init;
+                window.onresize = init;
+
+                function init() {
+                    //first set the height of the no content card container div to fill the remaining space
+                    let remaining_height = 0;
+                    let offset_zero = 0;
+                    let children = document.body.children;
+                    //console.log("child count: " + String(children.length));
+                    for (let i = 0; i < children.length; i++) {
+                        let child = children[i];
+                        //console.log(child.tagName);
+
+                        //record the offset of the first element
+                        if (i == 0) {
+                            offset_zero = child.scrollHeight;
+                        }
+
+                        if (child.id != 'expanding-container-outer') {
+                            //scrollHeight is the total amount of height the element occupies, regardless of if it is visible or not
+                            remaining_height += child.scrollHeight; 
+                        }
+                    }
+
+                    //scrollHeight is the total amount of height the element occupies, regardless of if it is visible or not
+                    let no_services_card = document.getElementById('no-services-card');
+                    let size_of_no_services_card = document.getElementById('no-services-card').offsetHeight;
+                    let outer_container = document.getElementById('expanding-container-outer');
+                    //clientHeight is the visible screen space of the element. In the case of document.body, it is the entire
+                    //usable height of the browser window, aka everything inside the scrollbars and underneath the address bar area
+                    outer_container.style.height = document.body.clientHeight - remaining_height;
+                }
+            }
+
+        })(window, document, undefined);
+
+    </script>      
+    {% endblock %}
+    <!--This helps prevent elements from being transitioned on page load-->
+    <script> </script>
+    </body>
+</html>

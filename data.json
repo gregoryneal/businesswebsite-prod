@@ -1,0 +1,208 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$fZ0YoZ6vhVsLdH39NjZWA4$sPiXOkhzFs7WB+77vm74Xwk4ykUT3I1H83OxC6nSx4Y=",
+        "last_login": "2022-09-25T05:39:28.726Z",
+        "is_superuser": true,
+        "username": "greg",
+        "first_name": "",
+        "last_name": "",
+        "email": "gregcraig23@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-07-17T19:05:31.884Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$tb9G1AMDr42DLvA4FDFOx6$VijzPXGHeMvyRydybxX96VHpKK+ex27dF++v5hX3tIM=",
+        "last_login": "2022-08-08T03:25:03.548Z",
+        "is_superuser": true,
+        "username": "tim",
+        "first_name": "Tim",
+        "last_name": "Lim",
+        "email": "tlim.mines@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-07-26T04:09:49Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$EVGCrAsROs9elWHBijOwbx$zkfK6QV1PF1l8d2vJtyEJokBjj4jWCXFKJ5H/JregOQ=",
+        "last_login": "2022-09-14T02:56:28.685Z",
+        "is_superuser": false,
+        "username": "testaccount",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-09-14T02:56:28.537Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$DYf9nSH9UNS4hAmWaqwwrC$FsChCUnWa0LjwxS5T9W/ZJ3PZ5q5artH2YZ1DZ99I3I=",
+        "last_login": "2022-09-24T23:00:13.418Z",
+        "is_superuser": false,
+        "username": "test",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-09-24T23:00:13.267Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "mainsite.service",
+    "pk": 1,
+    "fields": {
+        "uid": "solar-package",
+        "short_name": "Solar Package",
+        "medium_name": "Solar Package",
+        "long_name": "Solar Package",
+        "customer_description": "Power your project with sunlight.",
+        "medium_description": "Keeping your batteries topped up on the road is important. Solar power is just one of many methods you can use to keep your batteries charged and ready to go with little maintenance.",
+        "long_description": "## Solar \r\n\r\n<div class=\"d-flex flex-row justify-content-center\" markdown=\"1\">\r\nDo you know how much solar power you need?\r\n\r\n![solar](../static/mainsite/images/solar2.jpg)\r\n</div>\r\n\r\n* 100 watts\r\n* 200 watts\r\n* 400 watts?\r\n\r\n### How to calculate solar usage\r\n\r\nFirst you need an egg.\r\n\r\n## Step 2\r\n\r\nThis is step two\r\n\r\n---",
+        "price": 200000,
+        "start_date": "2022-07-17",
+        "end_date": null,
+        "img_url": "C:\\Users\\gregc\\OneDrive\\Documents\\Programming\\businesswebsite\\mainsite\\static\\mainsite\\images\\solar.jpg",
+        "blurb_1": "<p>Keeps batteries perpetually charged and ready for the road.</p>",
+        "blurb_2": "<p>Will never let you down, unlike my last girlfriend.</p>",
+        "blurb_3": "<p>Only a 12% chance of death!</p>"
+    }
+},
+{
+    "model": "mainsite.service",
+    "pk": 2,
+    "fields": {
+        "uid": "battery-package",
+        "short_name": "Battery Expansion",
+        "medium_name": "Battery Expansion",
+        "long_name": "Battery Expansion",
+        "customer_description": "Expanded battery capabilities to take you further.",
+        "medium_description": "Expanded battery capabilities will allow you to go to the places you love and stay there longer. Do you want to utilize the most modern technology? Or do you want to keep it old school? We can do it.",
+        "long_description": "## Batteries and some other stuff ##\r\n\r\nI've decided to compile a list of great items for you, things that will deliver power to your fingertips at a moments notice. These items are forgotten in time, in history, but I have bravely trekked throughout the world to bring them back to you. I have laid my life on the line to bring you the best batteries this world has never seen.\r\n\r\nI will sell you these batteries at a cost, not your life, but a monetary cost. But that is dependent on how many of these ancient yet world class batteries you would like and where you would like them to be installed. Currently we only install on the interior of your vehicle.\r\n\r\n---",
+        "price": 500000,
+        "start_date": "2022-07-17",
+        "end_date": null,
+        "img_url": "C:\\Users\\gregc\\OneDrive\\Documents\\Programming\\businesswebsite\\mainsite\\static\\mainsite\\images\\solar.jpg",
+        "blurb_1": "<p>LiFePO4, AGM, or any other battery type we can install.</p>",
+        "blurb_2": "<p>Ask about a smart charging relay to keep your batteries topped up from your alternator!</p>",
+        "blurb_3": "<p>It is said that ancient Egyptians harnessed the power of some of these batteries to erect great monuments. Now I've never seen anything in Egypt that could be considered a great monument or anything, but it's just what's been said okay.</p>"
+    }
+},
+{
+    "model": "mainsite.service",
+    "pk": 3,
+    "fields": {
+        "uid": "heater-cooler",
+        "short_name": "Climate Package",
+        "medium_name": "Climate Package",
+        "long_name": "Heater and AC Package, HOT and COLD on your NIPPLES",
+        "customer_description": "A customized heater and air conditioning install.",
+        "medium_description": "A fully customized heater and air conditioning installation. Consult with our professionals to determine your optimal heating and cooling needs.",
+        "long_description": "## Climate SHIT\r\n\r\nI swear I'm not deranged. We just want to offer you a nice climate control package to suit your days whether you are in the sun, or in the snow. We can heat and chill any area to suit your project. For gas or diesel heaters, some vehicles will have the option to source the gas or diesel directly from the tank! Feel free to ask about it.\r\n\r\n---",
+        "price": 1000000,
+        "start_date": "2022-07-17",
+        "end_date": null,
+        "img_url": "C:\\Users\\gregc\\OneDrive\\Documents\\Programming\\businesswebsite\\mainsite\\static\\mainsite\\images\\clean-cabling1.jpg",
+        "blurb_1": "<p>Ask about different size heaters for different size project areas for customized pricing.</p>",
+        "blurb_2": "<p>Air conditioning units come in 12 volt DC models, which require at least 500 amp hours of batteries to run effectively. They also come in 120 volt AC models, which require access to an outlet at a campsite or at home to run. There are also more in depth setups for 120 volt ACs which can use your existing battery or battery installation. Be sure to ask about your specific setup</p>",
+        "blurb_3": "<p>This job usually takes a little bit longer, and so we may schedule it to be done over two or three days instead of one.</p>"
+    }
+},
+{
+    "model": "mainsite.service",
+    "pk": 4,
+    "fields": {
+        "uid": "full-service",
+        "short_name": "Full Service",
+        "medium_name": "Full Service",
+        "long_name": "FULL BODY SERVICE (Solar, Batteries, Heat, AC, Generators, all in one!)",
+        "customer_description": "Solar, batteries, climate, everything at once.",
+        "medium_description": "Take advantage of bundling to save a ton of money. This is a fully customizable all in one battery, solar, heating and air conditioning, and generator install.",
+        "long_description": "## I can't even believe this is a thing\r\n\r\nAre you ready to go adventuring? Do you want every source of power imaginable on your recreational vehicle? What about orgies? In the winter time? Well you will definitely need this all in one package if you ever want to do anything useful you disgusting ingrate. Buy it now. Also ask about how we can add even more stuff to your useless pile of junk you call a 'Fun-mobile'. I'm talking about things like little USB ports or lights, or outlets to charge your massive dildo. We will install anything you want.\r\n\r\n---",
+        "price": 2000000,
+        "start_date": "2022-07-17",
+        "end_date": null,
+        "img_url": "C:\\Users\\gregc\\OneDrive\\Documents\\Programming\\businesswebsite\\mainsite\\static\\mainsite\\images\\clean-cabling2.jpg",
+        "blurb_1": "<p>This is a big, big pile of work, expect at least 3 or 4 days, maybe more.</p>",
+        "blurb_2": "<div class=\"card\">\r\n<div class=\"card-header p-1 m-1\">\r\n<p>Special offer!</p>\r\n</div>\r\n<div class=\"card-body p-1 m-1\">\r\n<p>\"I will personally guarantee everything works by sticking my dick really far into it.\"<br> -Greg Pritchard</p>\r\n</div>\r\n</div>",
+        "blurb_3": "<p>If you are unhappy then contact the Bureau of Expensive Repairs to schedule an Expensive Repair&#8482;.</p>"
+    }
+},
+{
+    "model": "mainsite.knowledgebaseentry",
+    "pk": 1,
+    "fields": {
+        "service_id": null,
+        "slug": "overlanding-101",
+        "short_title": "Overlanding 101",
+        "medium_title": "Everything you need to know about overlanding",
+        "short_description": "This guide will help clear up any misconceptions you have about what overlanding is and how people do it.",
+        "entry": "![solar](/static/mainsite/images/solar2.jpg){ width=\"100%\" }\r\n\r\nOverlanding is a fusion of camping and off-roading, combining elements of each to form a distinct automotive/outdoor hobby.\r\n\r\nIt has its origins in the Australian outback, where early overland routes were formed to facilitate intracontinental travel and trade. It evolved first from horseback and then to rail, before it was finally mechanized for motorcyles and automobiles.\r\n\r\n<hr class=\"hr-text\"/>\r\n\r\n# What is Overlanding?\r\n\r\nNowadays, overlanding is done more for recreation than necessity.\r\n\r\nYes, overlanding is sometimes referred to as ôcar camping,ö but it goes much deeper than that.\r\n\r\nOverlanding is built upon the spirit of adventure and self-relianceùthe idea of travelling into the wilderness, carrying only the essential gear for whatever you expect to encounter.\r\n\r\n<hr class=\"hr-text\"/>\r\n\r\n> WeÆre posting a handful of articles that really dive into overlanding details like cargo racks, tools, vehicle recovery, radio communications, tents, packing checklists, and more. Check out our Overlanding Essentials series.\r\n\r\nAn overland trip might be a simple off-the-grid weekend, or a months-long excursion to a remote destination.\r\n\r\nBut perhaps what truly separates overlanding from camping, is the role your transportation plays in the adventure.\r\n\r\nHannibal had his elephants, Lewis and Clark had their canoes, and NASA had its [Saturn V](https://en.wikipedia.org/wiki/Saturn_V).\r\n\r\nIn the same vein, overlanders rely on trucks, Jeeps, SUVs, motorcycles, ATVsùeven full-size vans are quite popular as overlanding rigs.\r\n\r\nThe proper overlanding vehicle must be equipped to traverse an almost infinite combination of terrain and weather. To compound the complexity, the vehicle must be able to transport water, food, shelter, tools, and other essential sundries.",
+        "category": null,
+        "author": "Uknown Author",
+        "pub_date": "2022-09-18",
+        "last_edited": "2022-09-20T03:02:08.800Z",
+        "draft": false
+    }
+},
+{
+    "model": "mainsite.knowledgebaseentry",
+    "pk": 2,
+    "fields": {
+        "service_id": null,
+        "slug": "how-to-write-knowledge-base-entries",
+        "short_title": "How To",
+        "medium_title": "How to Write Knowledge Base Entries",
+        "short_description": "Using a blend of html and the python-markdown library, we can create new blog posts on this very website. Read on to find out more.",
+        "entry": "<div class=\"responsive-col-md\" markdown=\"1\">\r\n\r\n* Make a new image folder in the backend at <br/>```mainsite/static/mainsite/images/&lt;NEW POST NAME&gt;/```<br/>and add any images you may need there.\r\n\r\n* Become familiar with basic HTML editing and CSS styling, you can always add pure HTML/CSS in these posts as a backup, but the markdown is generally easier if it will work.\r\n\r\n* Read the [syntax rules](https://daringfireball.net/projects/markdown/syntax) for basic markdown syntax.\r\n\r\n* Next become familiar with the [extra syntax rules](https://python-markdown.github.io/extensions/extra/) included in the python-markdown object. Note that this is 7 different sets of syntax for different things. However the two most useful are \"attribute lists\", and \"markdown in html\". \r\n\r\n* Read the entry for this guide! It is available in the database under \"knowledge base entrys\"\r\n\r\n* All custom CSS classes can be found within <br/>```mainsite/static/mainsite/css/article.css```<br/>.\r\n\r\n</div>",
+        "category": null,
+        "author": "Greg Pritchard",
+        "pub_date": "2022-09-18",
+        "last_edited": "2022-09-18T20:05:47.551Z",
+        "draft": true
+    }
+},
+{
+    "model": "mainsite.faqentry",
+    "pk": 1,
+    "fields": {
+        "kbase_id": null,
+        "title": "How long will my project take?",
+        "entry": "Each project is unique to your specific build. A standard solar package will take 1 day at most, as will a standard battery package. But a climate package will usually take 2 days to complete. We can give you a much more accurate timeline when we start scheduling your project!",
+        "pub_date": "2022-09-18"
+    }
+},
+{
+    "model": "mainsite.faqentry",
+    "pk": 2,
+    "fields": {
+        "kbase_id": null,
+        "title": "Can you give me free stuff?",
+        "entry": "###No\r\n#no\r\n####NOO",
+        "pub_date": "2022-09-18"
+    }
+}
+]

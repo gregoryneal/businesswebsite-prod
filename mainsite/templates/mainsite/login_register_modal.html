@@ -1,0 +1,80 @@
+<div id="login-modal">
+    <div id="login-header">
+        <h3 class="h5" id="modal-title">Login</h3>
+        <button class="hide-login-modal">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 489.8 489.8" xml:space="preserve">
+                <g>
+                    <path d="M438.2,0H51.6C23.1,0,0,23.2,0,51.6v386.6c0,28.5,23.2,51.6,51.6,51.6h386.6c28.5,0,51.6-23.2,51.6-51.6V51.6    C489.8,23.2,466.6,0,438.2,0z M465.3,438.2c0,14.9-12.2,27.1-27.1,27.1H51.6c-14.9,0-27.1-12.2-27.1-27.1V51.6    c0-14.9,12.2-27.1,27.1-27.1h386.6c14.9,0,27.1,12.2,27.1,27.1V438.2z"/>
+                    <path d="M319,170.8c-4.8-4.8-12.5-4.8-17.3,0l-56.8,56.8l-56.8-56.8c-4.8-4.8-12.5-4.8-17.3,0s-4.8,12.5,0,17.3l56.8,56.8    l-56.8,56.8c-4.8,4.8-4.8,12.5,0,17.3c2.4,2.4,5.5,3.6,8.7,3.6s6.3-1.2,8.7-3.6l56.8-56.8l56.8,56.8c2.4,2.4,5.5,3.6,8.7,3.6    s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-57-56.8l56.8-56.8C323.8,183.3,323.8,175.6,319,170.8z"/>
+                </g>
+            </svg>
+        </button>
+    </div>
+    {% if login_form.errors %}
+        {% for field in login_form %}
+            <ul>
+                {% for error in field.errors %}
+                    <li>
+                        <strong>{{ error|escape }}</strong>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endif %}
+    {% if register_form.errors %}
+        {% for field in register_form %}
+            <ul>
+                {% for error in field.errors %}
+                    <li>
+                        <strong>{{ error|escape }}</strong>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endif %}
+    <div id="login-body" class="show">
+        <form id="login-form" method="post" action={% url 'login' %} accept-charset="UTF-8">
+            {% csrf_token %}
+            <div>
+                <small>
+                    <span>Username *</span>
+                </small>
+                {{ login_form.username }}
+            </div>
+            <div>
+                <small>
+                    <span>Password *</span>
+                </small>
+                {{ login_form.password }}
+            </div>
+            <input id="login-submit" type="submit" value="Login">
+        </form>
+
+        <p>Looking to <a href="javascript: showRegisterForm();">create an account</a>?</p>
+    </div>
+    <div id="register-body" style="display:none;">
+        <form id="register-form" method="post" enctype="multipart/form-data" data-remote="true" action={% url 'register' %} accept-charset="UTF-8">
+            {% csrf_token %}
+            <div>
+                <small>
+                    <span>Username *</span>
+                </small>
+                {{ register_form.username }}
+            </div>
+            <div>
+                <small>
+                    <span>Password *</span>
+                </small>
+                {{ register_form.password1 }}
+            </div>
+            <div>
+                <small>
+                    <span>Password again *</span>
+                </small>
+                {{ register_form.password2 }}
+            </div>
+            <input id="register-submit" type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a href="javascript: showLoginForm();">Login</a></p>        
+    </div>
+</div>

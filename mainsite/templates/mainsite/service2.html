@@ -1,0 +1,99 @@
+{% extends "mainsite/base.html" %}
+{% load service_extras %}
+{% load static %}
+
+{% block links %}
+<link href={% static 'mainsite/css/services2.css' %} rel="stylesheet" />
+{% endblock %}
+{% block meta %}
+<title>Services | Air conditioning | Heating | Battery expansion and installation | Inverters | Solar systems | Single day installations</title>
+<meta name="description" content="We offer a wide range of services, from solar controllers to air conditioning to inverters and charging systems. We can take any project to the max in the quickest time." >
+{% endblock %}
+
+{% block header_image %}
+
+{% endblock %}
+
+{% block content %}
+<div id="subheader-image-outer">       
+    <div id="subheader-inner" class="overlay-parent">      
+    
+        <div id="subheader-inner-content" class="sh-content z-1">
+            <h6 class="sh-subtitle text-center h6">What do we offer?</h6>
+
+            <h2 class="sh-header h1">Customized overland installations</h2>
+
+            <h1 class="h6">Solar systems, battery systems, inverters, heating and air conditioning</h1>
+
+            <h6 class="sh-subtitle h6">No need to send your van to a shop and wait weeks for them to finally get around to your work. We have everything we need to build your dream machine at home. Most jobs take less than three days, which means minimal interruption to your adventuring.</h6>
+
+            <hr class="hr-text" data-content="Services">
+
+            <div id="sh-body" class="z-3">
+                <section id="sh-responsive-grid-list">
+                    <div class="sh-responsive-grid-item easeload-ltr ad-1">
+                        <img src={% static 'mainsite/images/check-circle.png' %} class="medium-icon"></img>
+                        <p><b>Solar Installation</b><br/>Our most popular package, a customizable solar panel installation will keep you outdoors longer.</p>
+                    </div>
+                    <div class="sh-responsive-grid-item easeload-ltr ad-105">
+                        <img src={% static 'mainsite/images/check-circle.png' %} class="medium-icon"></img>
+                        <p><b>Batteries and Charging Systems</b><br/>We use the latest in battery technology to deliver power to your most critical components, as well as the latest in innovative charging solutions to keep you topped up and ready at a moments notice.</p>
+                    </div>
+                    <div class="sh-responsive-grid-item easeload-ltr ad-2">
+                        <img src={% static 'mainsite/images/check-circle.png' %} class="medium-icon"></img>
+                        <p><b>Climate Control</b><br/>Get the latest in heating and cooling technology at your fingertips. Bring the comfort of your home on the go.</p>
+                    </div>
+                    <div class="sh-responsive-grid-item easeload-ltr ad-205">
+                        <img src={% static 'mainsite/images/check-circle.png' %} class="medium-icon"></img>
+                        <p><b>Repair</b><br/>Do you need to redo some work that was already done? Skip the guessing game and schedule your repairs today. Our technicians are on call and ready to come and get you back on the road.</p>
+                    </div>
+                </section>
+
+                <div id="sh-responsive-flex-image">
+                    <img class="easeload-rtl ad-0 bs-1" src={% static 'mainsite/images/solar.jpg' %} alt="Subheader Image Solar"/>
+                </div>
+            </div>
+
+            <div id="sh-buttons-holder">
+                <button onclick="location.href={% url 'quote' %}" class="brand-bg-primary">Get a free quote</button>
+                <button class="brand-bg-secondary">Get another thing</button>
+            </div>
+        </div>
+        <div class="overlay-parent">
+            <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule z-3" onload="this.style.opacity=1" alt="Divider Image" />
+            <div>
+                <img src={% static "mainsite/images/solar2.jpg" %} id="subheader-image" class="easeload" onload="this.style.opacity=1" alt="Header Image" />
+                <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule flip-both bottom-header-image" onload="this.style.opacity=1" alt="Divider Image" />
+            </div>
+        </div>
+
+    </div>
+</div>
+<hr class="hr-text z-2" data-content="Why Choose Us">
+<div id="why-us">
+    <div id="why-content" class="sh-content">
+        <h2 class="sh-header h3">Colorado trusts us as overland experts</h2>
+        <h6 class="sh-subtitle h6">We have over 20 years combined experience in delivering the most reliable, well designed systems for overlanding.</h6>
+        <div id="why-reasons">
+            <div class="why-reason right easeload-ltr ad-05"> 
+                <div class="why-header">
+                <p><b>We've been there</b><br/>There's an almost infinite combination of accessories for your overland project and it's easy to get overwhelmed by what to consider. Let us simplify the process for you.</p>
+                </div>
+            </div>
+            <div class="why-reason left easeload-rtl ad-05"> 
+                <p><b>We are easy to work with</b><br/>We have flexible scheduling options, and you don't even have to take your van into a shop. We will do the work in your driveway, garage, etc. permitting weather.</p>
+            </div>
+            <div class="why-reason right easeload-ltr ad-05"> 
+                <p><b>Fully customizable</b><br/>Do you have an odd set of requirements for your project? We will work with you to ensure your needs are met. We've done just about everything.</p>
+            </div>
+            <div class="why-reason left easeload-rtl ad-05"> 
+                <p><b>Quality guarantee</b><br/>We guarantee our work for 2 years so you can rest easy.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/mainsite/js/service.js" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "mainsite/base.html" %}
+
+{% block links %}
+<link href="/static/mainsite/css/htmlerror.css" rel="stylesheet" />
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/mainsite/js/error-code.js" type="text/javascript"></script>
+{% endblock %}
+{% block meta %}
+<title>ERROR {{status_code}}</title>
+<meta name="description" content="Error {{status_code}}. Reason for error: {{status_reason}}." >
+{% endblock %}
+
+{% load service_extras %}
+{% load static %}
+
+{% block content %}
+<div id="subheader-image-outer">       
+    <div id="subheader-inner" class="overlay-parent">      
+    
+        <div id="subheader-inner-content" class="sh-content z-1">
+
+            <div class="error-outer" class="z-3">
+                <div class="error-explanation">
+                    <p class="status-subheader">error</p>
+                    <p class="status-header">{{status_header}}</p>
+                    <h1 class="error-title h1" style="display:none;">{{status_code}}</h1>
+                    <p class="status-reason" style="display:none;">{{status_reason}}</p>
+                    <img class="status-image" onerror="failedToLoadImage()" src="https://http.cat/{{status_code}}" alt="Error code cat image"/>
+                </div>
+                <hr class="hr-text">
+            </div>
+        </div>
+        <div class="overlay-parent">
+            <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule z-3" onload="this.style.opacity=1" alt="Divider Image" />
+            <div>
+                <img src={% static "mainsite/images/solar2.jpg" %} id="subheader-image" class="easeload" onload="this.style.opacity=1" alt="Header Image" />
+                <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule flip-both bottom-header-image" onload="this.style.opacity=1" alt="Divider Image" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

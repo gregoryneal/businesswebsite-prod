@@ -1,0 +1,29 @@
+li li {
+    background-color: rgba(34, 23, 234, .6);
+}
+
+li li::marker {
+    display: none;
+}
+
+#sh-body {
+    flex-direction: column;
+}
+
+.error-holder {
+    min-width: 300px;
+    max-width: 500px;
+    width: 80%;
+    text-align: start;
+
+    border-width: 5px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgba(228, 82, 82, 0.747);
+}
+
+@media (min-width: 992px) {
+    #sh-body {
+        flex-direction: column;
+    }
+}

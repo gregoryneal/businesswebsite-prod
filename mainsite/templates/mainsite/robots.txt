@@ -1,0 +1,6 @@
+User-Agent: *
+allow: /
+disallow: /admin/
+disallow: /poop/
+
+Sitemap: {% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{% url 'sitemap' %}

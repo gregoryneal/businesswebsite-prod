@@ -1,0 +1,47 @@
+{% extends "mainsite/base.html" %}
+
+{% block links %}
+<link href="/static/mainsite/css/profile.css" rel="stylesheet" />
+{% endblock %}
+{% block meta %}
+<title>Profile of {{user.get_username}}</title>
+<meta name="description" content="My profile, about me, my build" >
+{% endblock %}
+
+{% block scripts %}
+<!--script src="/static/mainsite/js/faq.js" type="text/javascript"></script-->
+{% endblock %}
+
+{% load service_extras %}
+{% load static %}
+
+{% block content %}
+<div id="subheader-image-outer">       
+    <div id="subheader-inner" class="overlay-parent">      
+    
+        <div id="subheader-inner-content" class="sh-content z-1">
+            <div id="profile-outer">
+                <img src="https://robohash.org/{{gravatar_id}}?set=set3;size=200x200"/>
+                <h5 class="section-title h1">Unavailable</h5>
+                <h4 class="section-subheader h4">This section of the website is still under development.</h4>
+                <div id="faq-container" class="z-3">
+                </div>
+            <hr class="hr-text">
+        </div>
+            
+        </div>
+        <div class="overlay-parent">
+            <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule z-3" onload="this.style.opacity=1" alt="Divider Image" />
+            <div>
+                <img src={% static "mainsite/images/clean-cabling3.jpg" %} id="subheader-image" class="easeload" onload="this.style.opacity=1" alt="Header Image" />
+                <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule flip-both bottom-header-image" onload="this.style.opacity=1" alt="Divider Image" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

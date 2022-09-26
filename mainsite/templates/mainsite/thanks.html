@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block links %}
+<link href="/static/mainsite/css/thanks.css" rel="stylesheet" />
+{% endblock %}
+{% block meta %}
+{% if email_success == True %}
+<title>Thanks for getting in contact with us!</title>
+{% else %}
+<title>There was a server error!</title>
+{% endif %}
+<meta name="description" content="This page is to indicate if your contact attempt was successful or not." >
+{% endblock %}
+
+{% block content %}
+<div id="subheader-image-outer">       
+  <div id="subheader-inner" class="overlay-parent">      
+  
+      <div id="subheader-inner-content" class="sh-content z-1">
+          <div id="sh-body" class="z-3">
+            {% if email_success == True %}
+            <h3 class="sh-header h3">Thanks for getting in contact</h3>
+            <h6 class="sh-subtitle h6">We will get back to you soon</h6>            
+            {% else %}            
+            <h3 class="sh-header h3">Error</h3>
+            <h6 class="sh-subtitle h6">There was an error sending your email.</h6>
+            {% endif %}
+
+            {% if debug == True %}
+              {% if email_success == True %}
+                <p class="text-center"><strong>DEV: </strong>Email sent succesfully.</p>
+              {% else %}
+                <p class="text-center error-holder"><strong>DEV: </strong>Email send error.</p>
+              {% endif %}
+            {% endif %}
+            
+            <a href={% url 'index' %} role="button" class="btn brand-bg-primary">Return</a>
+          </div>
+      </div>
+      <div class="overlay-parent">
+          <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule z-3" onload="this.style.opacity=1" alt="Divider Image" />
+          <div>
+              <img src={% static "mainsite/images/clean-cabling2.jpg" %} id="subheader-image" class="easeload" onload="this.style.opacity=1" alt="Header Image" />
+              <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule flip-both bottom-header-image" onload="this.style.opacity=1" alt="Divider Image" />
+          </div>
+      </div>
+
+  </div>
+</div>
+{% endblock %}

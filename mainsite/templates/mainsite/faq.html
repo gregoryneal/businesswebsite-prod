@@ -1,0 +1,63 @@
+{% extends "mainsite/base.html" %}
+
+{% block links %}
+<link href="/static/mainsite/css/faq.css" rel="stylesheet" />
+{% endblock %}
+{% block meta %}
+<title>Frequently Asked Questions</title>
+<meta name="description" content="Here are some frequently asked questions to help you decide if we are the right fit for your project." >
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/mainsite/js/faq.js" type="text/javascript"></script>
+{% endblock %}
+
+{% load service_extras %}
+{% load static %}
+
+{% block content %}
+<div id="subheader-image-outer">       
+    <div id="subheader-inner" class="overlay-parent">      
+    
+        <div id="subheader-inner-content" class="sh-content z-1">
+            <h4 class="section-title h1">General Questions</h4>
+            <h4 class="section-subheader h4">here you will find answers to common questions about our company and our process</h4>
+            <div id="faq-container" class="z-3">
+            {% for faq in entries %}
+                <div>
+                    <button type="button" class="faq-entry" id="faq-entry-{{faq.id}}" aria-controls="faq-collapse-{{faq.id}}">
+                        <div class="faq-title">
+                            <h1 class="faq-header h4">{{faq.title}}</h1>
+                            <div class="faq-toggle-icon">
+                                <div class="x-visible"></div>
+                                <div class="x-invisible"></div>
+                            </div>
+                        </div>
+                        <div class="faq-body">
+                            <div class="collapse faq-content" id="faq-collapse-{{faq.id}}">
+                                <hr class="hr-text"/>
+                                {{faq.entry|markdownify|safe}}
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            {% endfor %}
+            <hr class="hr-text">
+        </div>
+            
+        </div>
+        <div class="overlay-parent">
+            <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule z-3" onload="this.style.opacity=1" alt="Divider Image" />
+            <div>
+                <img src={% static "mainsite/images/clean-cabling3.jpg" %} id="subheader-image" class="easeload" onload="this.style.opacity=1" alt="Header Image" />
+                <img src={% static "mainsite/images/header-img.png" %} class="easeload subheader-horizontal-rule flip-both bottom-header-image" onload="this.style.opacity=1" alt="Divider Image" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

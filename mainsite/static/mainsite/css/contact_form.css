@@ -1,0 +1,11 @@
+.quote-body {    
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "name"
+    "email"
+    "phone"
+    "message"
+    "message"
+    "submit"
+}
+

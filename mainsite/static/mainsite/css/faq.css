@@ -1,0 +1,145 @@
+#faq-container {
+    display: grid;
+    grid-auto-rows: minmax(50px, auto);
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.faq-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-color: var(--dark-gray-3);
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-left-width: 30px;
+    border-left-style: solid;
+    /*border-radius: 5px;*/
+    /*box-shadow: var(--service-card-box-shadow);*/
+
+    transition: border-color .3s;
+}
+
+.bc {
+    border-color: var(--brand-color-secondary);
+}
+
+.faq-content p {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+.faq-entry hr {
+    margin: 0;
+}
+
+.faq-header {
+    flex: 1;
+}
+
+.faq-toggle-icon {
+    justify-self: end;
+}
+
+.faq-title {
+    font-family: var(--main-font-family);
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+}
+
+.faq-content {
+    font-family: var(--secondary-font-family);
+    width: 100%;
+}
+
+.faq-toggle-icon {
+    margin-right: 20px;
+    height: 20px;
+    width: 20px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 2%;
+}
+
+.section-subheader {
+    font-family: 'Montserrat Italic', sans-serif;
+    font-size: .8rem;
+    font-weight: 500;
+    max-width: 300px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.faq-body {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+
+    transition: height .5s ease;
+}
+
+.faq-body.show {
+    height: 200px;
+}
+
+/* These describe the faq close/open icon */
+
+.x-visible {
+    height: 3px;
+    width: 20px;
+    background-color: black;
+    transform: translate(0, 2px);
+
+    transition-delay: 1s;
+    transition: transform .5s;
+}
+
+.x-invisible {    
+    height: 3px;
+    width: 20px;
+    background-color: black;
+    transform: translate(0, -2px) rotate(90deg);    
+    transition-delay: 1s;
+    transition: transform .5s, opacity .5s;
+
+}
+
+.a {
+    transform: translate(0, 2px) rotate(-180deg);
+}
+
+.b {
+    transform: translate(0, -2px) rotate(0);
+    opacity: 0;
+}
+
+@media (min-width: 992px) {
+}
