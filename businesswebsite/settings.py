@@ -15,6 +15,20 @@ import os
 import django
 from datetime import date
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+}
+
 USE_CART = False 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +43,7 @@ DEBUG = False
 
 # https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-ALLOWED_HOSTSc 
 # something like .example.com will match both www and non www
-ALLOWED_HOSTS = [".overlandelectricians.com", "localhost", '127.0.0.1', '.ngrok.io', '.herokuapp.com']
+ALLOWED_HOSTS = [".overlandelectricians.com", '.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -122,11 +136,8 @@ STATIC_URL = 'static/'
 
 # Other places to look for static files 
 # not tied to any particular app
-STATICFILES_DIRS = [
-    BASE_DIR / "static/",
-    BASE_DIR / "static/css/",
-    BASE_DIR / "static/js/",
-]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
