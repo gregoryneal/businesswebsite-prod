@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import django
 from datetime import date
+import dj_database_url
 
 LOGGING = {
     'version': 1,
@@ -164,13 +165,16 @@ DATABASES = {
     },
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
+        'NAME': "maindb",
+        'USER': "postgres",
         'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'HOST': "localhost",
+        'PORT': 5432,
     }
 }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Email settings 
 DEFAULT_FROM_EMAIL = 'admin@overlandelectrians.com'
