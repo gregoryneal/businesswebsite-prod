@@ -250,6 +250,12 @@ right and left paddings are 50px
 #navigation-tabs-2 a {
     font-size: small;
     min-width: 100px;
+    width: 100%;
+    height: 100%;
+    padding: 0;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #navigation-tabs-2 .label {

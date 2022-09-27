@@ -119,17 +119,17 @@
                                 
                                 <ul id="{%if user.is_superuser%}admin-menu-content{%else%}profile-menu-content{%endif%}">
                                     <li>
-                                        <a href="{% url 'profile' %}">Profile</a>
+                                        <a href="{% url 'profile' %}"><div>Profile</div></a>
                                     </li> 
                                     <li>
-                                        <a href="{% url 'logout' %}">Logout</a>
+                                        <a href="{% url 'logout' %}"><div>Logout</div></a>
                                     </li>
                                     {% if user.is_superuser %}
                                     <li>
-                                        <a href="{% url 'admin:index' %}">Edit Users</a>
+                                        <a href="{% url 'admin:index' %}"><div>Edit Users</div></a>
                                     </li> 
                                     <li>
-                                        <a href="{% url 'myAdmin:index' %}">Edit Services</a>
+                                        <a href="{% url 'myAdmin:index' %}"><div>Edit Services</div></a>
                                     </li>
                                     {% endif %}
                                 </ul>
