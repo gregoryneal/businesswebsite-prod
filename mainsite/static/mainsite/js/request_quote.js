@@ -24,6 +24,6 @@ function removeImages() {
     let nameList = document.getElementById("uploaded-image-list");
     let newName = "No images uploaded";
 
-    filesList.files.value = "";
+    filesList.value = "";
     nameList.innerHTML = newName;
 }

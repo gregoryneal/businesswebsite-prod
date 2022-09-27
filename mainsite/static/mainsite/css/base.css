@@ -1212,6 +1212,14 @@ p {
     font-size: small;
 }
 
+button:hover, button:focus {
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
 @media (min-width: 400px) {
     #sidebar {
         width: 400px;
@@ -1322,3 +1330,8 @@ p {
 }
 
 @media (min-width: 1400px) {}
+
+/* Hotfix for whatever is causing the whitespace to show up on the right side of the screen on mobile */
+html {
+    overflow-x: hidden;
+}

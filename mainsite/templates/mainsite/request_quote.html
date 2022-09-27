@@ -1,7 +1,7 @@
 {% extends "mainsite/base.html" %}
 
 {% block links %}
-<link href="/static/mainsite/css/quote_form.css" rel="stylesheet" />
+<link href="/static/mainsite/css/quote_form.css" type="text/css" rel="stylesheet" />
 {% endblock %}
 {% block meta %}
 <title>Request Quote | AC | Heaters | Batteries | Solar | Single day installations</title>
@@ -71,7 +71,11 @@
                                             <p>Accepts <b>PNG</b> or <b>JPEG</b> formats, select multiple images at a time.</p>
                                             <div class="images-upload-button-outer">
                                                 <input type="button" id="upload-images" value="Upload Images" onclick="document.getElementById('quote-form-images').click()" />
-                                                <span id="uploaded-image-list">No images uploaded</span>
+                                                <div id="uploaded-image-holder">
+                                                    <span id="uploaded-image-list">
+                                                        No images uploaded
+                                                    </span>
+                                                </div>                                                
                                                 <input type="button" id="remove-images" value="Delete Images" onclick="removeImages()" />
                                             </div>
                                             {{ quote_form.images }}
