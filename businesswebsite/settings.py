@@ -46,7 +46,7 @@ DEBUG = False
 # something like .example.com will match both www and non www
 ALLOWED_HOSTS = [".overlandelectricians.com", '.herokuapp.com']
 
-if (DEBUG or True):
+if (DEBUG):
     ALLOWED_HOSTS += 'localhost'
     ALLOWED_HOSTS += '*.ngrok.io'
 
