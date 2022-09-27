@@ -1133,76 +1133,76 @@ right and left paddings are 50px
 
 /* ANIMATIONS */
 
-.ad-0 {
+.ad0 {
     animation-delay: 10ms;
     transition-delay: 10ms;
 }
 
-.ad-01 {
+.ad01 {
     animation-delay: 100ms;
     transition-delay: 100ms;
 }
-.ad-02 {
+.ad02 {
     animation-delay: 200ms;
     transition-delay: 200ms;
 }
-.ad-03 {
+.ad03 {
     animation-delay: 300ms;
     transition-delay: 300ms;
 }
-.ad-04 {
+.ad04 {
     animation-delay: 400ms;
     transition-delay: 400ms;
 }
-.ad-05 {
+.ad05 {
     animation-delay: 500ms;
     transition-delay: 500ms;
 }
-.ad-06 {
+.ad06 {
     animation-delay: 600ms;
     transition-delay: 600ms;
 }
-.ad-1 {
+.ad1 {
     animation-delay: 1s;
     transition-delay: 1s;
 }
 
-.ad-105 {
+.ad105 {
     animation-delay: 1.5s;
     transition-delay: 1.5s;
 }
 
-.ad-2 {
+.ad2 {
     animation-delay: 2s;
     transition-delay: 2s;
 }
 
-.ad-205 {
+.ad205 {
     animation-delay: 2.5s;
     transition-delay: 2.5s;
 }
 
-.ad-3 {
+.ad3 {
     animation-delay: 3s;
     transition-delay: 3s;
 }
 
-.ad-305 {
+.ad305 {
     animation-delay: 3.5s;
     transition-delay: 3.5s;
 }
 
-.ad-4 {
+.ad4 {
     animation-delay: 4s;
     transition-delay: 4s;
 }
 
-.ad-5 {
+.ad5 {
     animation-delay: 5s;
     transition-delay: 5s;
 }
 
-.ad-6 {
+.ad6 {
     animation-delay: 6s;
     transition-delay: 6s;
 }
