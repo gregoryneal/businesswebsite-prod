@@ -46,12 +46,6 @@ DEBUG = False
 # something like .example.com will match both www and non www
 ALLOWED_HOSTS = [".overlandelectricians.com", '.herokuapp.com']
 
-if (DEBUG or True):
-    ALLOWED_HOSTS += 'localhost'
-    ALLOWED_HOSTS += '*.ngrok.io'
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -79,6 +73,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
 ROOT_URLCONF = 'businesswebsite.urls'
@@ -194,3 +189,12 @@ EMAIL_PORT = os.environ.get('EMAIL_HOST_PORT')
 # SECURITY WARNING: keep the secret key used in production secret!
 # TODO: move this to the keyring before going live on production
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+
+
+# Debug settings
+if (DEBUG):
+    ALLOWED_HOSTS += 'localhost'
+    ALLOWED_HOSTS += '*.ngrok.io'
+else:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
