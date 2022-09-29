@@ -14,21 +14,10 @@ from .templatetags.service_extras import GetMarkdownObject
 from django.core import mail
 import traceback
 
-# Generating a TABLE OF CONTENTS to render next to the services
-# 1. Get the bare HTML from the "service2.html" template
-#   -> since the generated html is a list of service.long_description
-#	-> from the database we can pull that list on the backend here
-#	-> within addServicesToContext
-# 2. Markdownify the bare html (see: https://python-markdown.github.io/extensions/toc/)
-# 3. Add the generated table of contents to the context by accessing
-# 	 the toc property on the markdown object
-# 4. Access the table of contents and render it inside the view
 def services(request):
 	if (request.method != "GET"):
 		return redirect('error', status_code=405)
-
-	#context = addServicesToContext({})
-	#context = addKBaseBriefsToContext(context)
+		
 	template = loader.get_template("service2.html")
 	return contextLoader({}, request, template)
 
@@ -265,56 +254,6 @@ def errorContextLoader(context, request, template=None, status_code=200):
 	response.status_code = status_code
 	return response
 
-def addServicesToContext(context):
-	# values returns a list of QuerySet <QuerySet [{'id':1, 'long_description':'etc'}, {...}]>
-	services = Service.objects.values('id', 'long_description')
-
-	# Force the queryset to evaluate so we can pass services as a value
-	if services: 
-		# Now we have a list of dictionaries services = [{'id':1, 'long_description':'etc'}, {...}]
-		l = len(services)
-
-		# Markdownify the entire string
-		md = GetMarkdownObject()
-
-		# Generate the full HTML for all the services
-		# leave them separate so we have space to add
-		# a request quote button at the end of each
-		# service, we cannot do these buttons with 
-		# full functionality with pure markdown.
-		long_descriptions2 = [service['long_description'] for service in services]
-		# join all the descriptions together to generate the TOC
-		# of the combined HTML, but keep the array of html 
-		# to send
-		long_descriptions = '\n\n'.join(long_descriptions2)
-		print(long_descriptions)
-		html = md.convert(long_descriptions)	
-		toc = md.toc
-
-		for service in services:
-			service['long_description'] = md.convert(service['long_description'])
-
-		# Convert each entry (AGAIN I KNOW)
-		context.update({
-				'services': services,
-				'TOC': toc,
-				'num_services': l,
-			})
-	return context
-
-def addKBaseBriefsToContext(context):
-	q = Service.objects.values('id')	
-	service_ids = []
-	for entry in q:
-		service_ids.append(entry['id'])
-	# Only get the objects contained in the service ids, since those will be attached to the service cards
-	kbase = KnowledgeBaseEntry.objects.values('id', 'service_id', 'medium_title', 'short_description').filter(id__in=service_ids)
-	
-	context.update({'kbase': kbase})
-	return context
-
-
-
 def emailFormToAddresses(request, form, recipients, subject=None):
 	print("Emailing form to addresses!")
 	# Assumes address is a valid email address
@@ -388,5 +327,6 @@ def emailFormToAddresses(request, form, recipients, subject=None):
 
 def emailFormToAdmin(request, form, subject=None):
 	# Emails just to myself
-	return emailFormToAddresses(request, form, ['gregcraig25@gmail.com'], subject) #'tlim.mines@gmail.com'])
+	admin = ['gregcraig25@gmail.com', 'tlim.mines@gmail.com']
+	return emailFormToAddresses(request, form, admin, subject)
 	
