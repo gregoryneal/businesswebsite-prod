@@ -1,5 +1,7 @@
 #sh-responsive-flex-image, #quote-form {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     max-width: 580px;
 }
 
@@ -40,6 +42,7 @@
 }
 
 div.quote-big-container {
+    display: -ms-grid;
     display: grid;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -56,13 +59,17 @@ div.quote-big-container {
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 20px;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 20px 1fr 20px 1fr 20px 1fr 20px auto 20px 1fr 20px 1fr;
     grid-template-rows: repeat(4, 1fr) auto repeat(2, 1fr);
     grid-auto-columns: 1fr;
+    grid-auto-rows: -webkit-min-content;
     grid-auto-rows: min-content;
     gap: 20px;
-    grid-template-areas: 
+        grid-template-areas: 
     "name"
     "email"
     "phone"
@@ -78,6 +85,9 @@ div.quote-big-container {
 }
 
 .message {  
+    -ms-grid-row: 11;  
+    -ms-grid-row-span: 3;  
+    -ms-grid-column: 1;  
     height: 70px;
     grid-area: message; 
 }
@@ -91,32 +101,45 @@ div.quote-big-container {
 }
 
 .name { 
+    -ms-grid-row: 1; 
+    -ms-grid-column: 1; 
     height: 70px;
     grid-area: name; 
 }
 
 .email { 
+    -ms-grid-row: 3; 
+    -ms-grid-column: 1; 
     height: 70px;
     grid-area: email; 
 }
 
 .phone { 
+    -ms-grid-row: 5; 
+    -ms-grid-column: 1; 
     height: 70px;
     grid-area: phone; 
 }
 
 .vehicle {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
     height: 70px;
     grid-area: vehicle;
 }
 
 .images {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
     grid-area: images;
-    align-self: center;
+    -ms-grid-row-align: center;
+        align-self: center;
     max-height: 200px;
 }
 
 .submit {
+    -ms-grid-row: 15;
+    -ms-grid-column: 1;
     height: 70px;
     grid-area: submit;
 }
@@ -149,27 +172,41 @@ div.quote-big-container {
 }
 
 #uploaded-image-holder {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 #uploaded-image-list {
     font-size: 15px;
     font-family: 'Montserrat Italic', sans-serif;
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     margin-left: 10px;
     margin-right: 10px;
     white-space: nowrap;
     text-align: start;
     overflow: hidden;
-    text-overflow: ellipsis;;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;;
     max-width: 240px;
 }
 
 .images-upload-box {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .images-upload-box p {
@@ -179,13 +216,24 @@ div.quote-big-container {
 }
 
 .images-upload-button-outer {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     margin-top:10px;
     height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: stretch;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
 }
 
 .images-upload-button-outer > input {
@@ -198,7 +246,10 @@ div.quote-big-container {
 
 @media (min-width: 500px) {
     #images-upload-button-outer {
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
     }
 }
 
@@ -208,7 +259,9 @@ div.quote-big-container {
     }
 
     #sh-responsive-flex-image, #quote-form {
-        flex: unset;
+        -webkit-box-flex: unset;
+            -ms-flex: unset;
+                flex: unset;
     }
 }
   

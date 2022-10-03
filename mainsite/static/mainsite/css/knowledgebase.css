@@ -1,5 +1,6 @@
 #sh-body {
     max-width: 1200px;
+    display: -ms-grid;
     display: grid;
     gap: 1rem .5rem;
     margin: 50px auto;
@@ -11,12 +12,16 @@
     padding: 0;
     border: none;
     display: block;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: whitesmoke;
     color: white;
     height: 22rem;
     width: 17em;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .k-entry > .overlay-parent {
@@ -34,8 +39,10 @@
 }
 
 .thumbnail > img {
-    object-fit: cover;
-    object-position: -10rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: -10rem;
+       object-position: -10rem;
 }
 
 .post-content {
@@ -53,6 +60,8 @@
 .post-slug {
     position: relative;
     height: 20px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     font-size: 10px;
     font-weight: 700;
@@ -100,7 +109,11 @@
     font-size: .85rem;
     padding: .5rem;
     color: var(--dark-gray-1);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     text-align: start;
 }
@@ -116,12 +129,14 @@
 
 @media (min-width: 576px) {
     #sh-body {
+        -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 992px) {
     #sh-body {
+        -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     }
 }

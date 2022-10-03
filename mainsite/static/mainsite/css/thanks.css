@@ -7,7 +7,10 @@ li li::marker {
 }
 
 #sh-body {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .error-holder {
@@ -24,6 +27,9 @@ li li::marker {
 
 @media (min-width: 992px) {
     #sh-body {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 }

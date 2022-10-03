@@ -1,24 +1,30 @@
-/* NEW CSS -- DELETE EVERYTHING ABOVE WHEN FINISHED */
-/* Modal container
- * fixed position
- * 100vh 100vw
- * top, left: 0
-*/
-
 #login-modal.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    transform: translate(-54.4%, 0);
+    -webkit-transform: translate(-54.4%, 0);
+        -ms-transform: translate(-54.4%, 0);
+            transform: translate(-54.4%, 0);
     opacity: 1;
 }
 
 #login-modal {
-    transform: translate(-200vw, 0);
+    -webkit-transform: translate(-200vw, 0);
+        -ms-transform: translate(-200vw, 0);
+            transform: translate(-200vw, 0);
     display: none;
-    flex-direction: column;
-    align-items: stretch;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
 
     position: fixed;
     width: 300px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     top: 5vh;
     left: 50vw;
@@ -32,21 +38,38 @@
     z-index: 15;
     /*opacity: 0;*/
     /*transition: transform .5s ease, opacity .5s ease;*/
-    animation-name: login-modal-open;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
+    -webkit-animation-name: login-modal-open;
+            animation-name: login-modal-open;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes login-modal-open {
+    from { -webkit-transform: translate(-100%, 0); transform: translate(-100%, 0) }
+    to { -webkit-transform: translate(-54.4%, 0); transform: translate(-54.4%, 0) }
 }
 
 @keyframes login-modal-open {
-    from { transform: translate(-100%, 0) }
-    to { transform: translate(-54.4%, 0) }
+    from { -webkit-transform: translate(-100%, 0); transform: translate(-100%, 0) }
+    to { -webkit-transform: translate(-54.4%, 0); transform: translate(-54.4%, 0) }
 }
 
 #login-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 10px;
     height: 50px;
 }
@@ -71,6 +94,8 @@
     padding: 1rem 2rem;
     opacity: 0;
     visibility: hidden;
+    -webkit-transition: opacity .5s ease, visibility .5s ease;
+    -o-transition: opacity .5s ease, visibility .5s ease;
     transition: opacity .5s ease, visibility .5s ease;
 }
 

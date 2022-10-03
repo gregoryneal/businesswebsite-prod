@@ -1,26 +1,34 @@
 #why-us {
   height: 600px;
+  display: -ms-grid;
   display: grid;
   width: 100%;
   text-align: center;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin-bottom: 40px;
 }
 
 #why-reasons {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-rows: 1fr 10px 1fr 10px 1fr 10px 1fr;
   grid-template-rows: repeat(4, 1fr);
   gap: 10px;
   justify-items: center;
 }
 
 .why-reason {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: whitesmoke;
   height: 200px;
   width: 80%;
   border-radius: 5px;
-  box-shadow: var(--box-shadow-1);
+  -webkit-box-shadow: var(--box-shadow-1);
+          box-shadow: var(--box-shadow-1);
   text-align: justify;
   padding: 0 10px 0 10px;
 }
@@ -32,16 +40,36 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   #why-reasons {    
+      -ms-grid-columns: 1fr 1fr;    
       grid-template-columns: 1fr 1fr;
+      -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+  }
+  #why-reasons > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  #why-reasons > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  #why-reasons > *:nth-child(3) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  #why-reasons > *:nth-child(4) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
   }
 
   .why-reason.left {
-      justify-self: left;
+      -ms-grid-column-align: left;
+          justify-self: left;
   }
 
   .why-reason.right {
-      justify-self: right;
+      -ms-grid-column-align: right;
+          justify-self: right;
   }
 }
 
@@ -53,20 +81,3 @@
         width: 400px;
   }
 }
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
-
-@media (min-width: 1400px) {
-}
-
-/* Really really wide screens */
-@media (min-width: 1530px) {
-
-}
-
-
-/* OVERRIDE BOOTSTRAP STYLES HERE 
-   PLEASE PROVIDE AN EXPLANATION
-*/

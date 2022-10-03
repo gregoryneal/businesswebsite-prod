@@ -1,6 +1,7 @@
 .quote-body {    
+    -ms-grid-rows: (1fr)[6];    
     grid-template-rows: repeat(6, 1fr);
-    grid-template-areas: 
+        grid-template-areas: 
     "name"
     "email"
     "phone"
@@ -8,4 +9,3 @@
     "message"
     "submit"
 }
-

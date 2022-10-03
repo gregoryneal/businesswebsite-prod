@@ -39,9 +39,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
 # https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-ALLOWED_HOSTSc 
 # something like .example.com will match both www and non www
 ALLOWED_HOSTS = [".overlandelectricians.com", '.herokuapp.com']
@@ -190,6 +187,10 @@ EMAIL_PORT = os.environ.get('EMAIL_HOST_PORT')
 # TODO: move this to the keyring before going live on production
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
+
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 # Debug settings
 if (DEBUG):
