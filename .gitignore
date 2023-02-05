@@ -155,4 +155,3 @@ cython_debug/
 #.idea/
 postgres db password.txt
 changes.txt
-postgres db password.txt
