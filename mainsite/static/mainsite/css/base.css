@@ -871,10 +871,10 @@ right and left paddings are 50px
 }
 
 .overlay-parent > * {    
-  -ms-grid-row: 1;    
-      grid-row-start: 1;
-  -ms-grid-column: 1;
-      grid-column-start: 1;
+    -ms-grid-row: 1;    
+    grid-row-start: 1;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
 }
 
 .z--2 {
@@ -1395,6 +1395,7 @@ right and left paddings are 50px
          -o-transition-delay: 100ms;
             transition-delay: 100ms;
 }
+
 .ad02 {
     -webkit-animation-delay: 200ms;
             animation-delay: 200ms;
@@ -1402,6 +1403,7 @@ right and left paddings are 50px
          -o-transition-delay: 200ms;
             transition-delay: 200ms;
 }
+
 .ad03 {
     -webkit-animation-delay: 300ms;
             animation-delay: 300ms;
@@ -1409,6 +1411,7 @@ right and left paddings are 50px
          -o-transition-delay: 300ms;
             transition-delay: 300ms;
 }
+
 .ad04 {
     -webkit-animation-delay: 400ms;
             animation-delay: 400ms;
@@ -1416,6 +1419,7 @@ right and left paddings are 50px
          -o-transition-delay: 400ms;
             transition-delay: 400ms;
 }
+
 .ad05 {
     -webkit-animation-delay: 500ms;
             animation-delay: 500ms;
@@ -1423,6 +1427,7 @@ right and left paddings are 50px
          -o-transition-delay: 500ms;
             transition-delay: 500ms;
 }
+
 .ad06 {
     -webkit-animation-delay: 600ms;
             animation-delay: 600ms;
@@ -1430,6 +1435,31 @@ right and left paddings are 50px
          -o-transition-delay: 600ms;
             transition-delay: 600ms;
 }
+
+.ad07 {
+    -webkit-animation-delay: 700ms;
+            animation-delay: 700ms;
+    -webkit-transition-delay: 700ms;
+         -o-transition-delay: 700ms;
+            transition-delay: 700ms;
+}
+
+.ad08 {
+    -webkit-animation-delay: 800ms;
+            animation-delay: 800ms;
+    -webkit-transition-delay: 800ms;
+         -o-transition-delay: 800ms;
+            transition-delay: 800ms;
+}
+
+.ad09 {
+    -webkit-animation-delay: 900ms;
+            animation-delay: 900ms;
+    -webkit-transition-delay: 900ms;
+         -o-transition-delay: 900ms;
+            transition-delay: 900ms;
+}
+
 .ad1 {
     -webkit-animation-delay: 1s;
             animation-delay: 1s;
@@ -1539,7 +1569,11 @@ input[type="submit"]:hover {
 
 @media (min-width: 576px) {
     #sh-buttons-holder > button:first-of-type {
-        margin-right: 100px;
+        margin-right: 50px;
+    }
+
+    #sh-buttons-holder > button:last-of-type {
+        margin-left: 50px;
     }
 
     #sh-buttons-holder > button {

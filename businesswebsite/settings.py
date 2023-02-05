@@ -155,23 +155,25 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'development': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "maindb",
-        'USER': "postgres",
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': "localhost",
-        'PORT': 5432,
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+else:
+    DATABASES = {
+        'development': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        },
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': "maindb",
+            'USER': "postgres",
+            'PASSWORD': os.environ.get('DB_PASS'),
+            'HOST': "localhost",
+            'PORT': 5432,
+        }
+    }
 
 # Email settings 
 DEFAULT_FROM_EMAIL = 'admin@overlandelectrians.com'
