@@ -17,12 +17,12 @@
     
         <div id="subheader-inner-content" class="sh-content z-1">
             <div id="sh-body" class="z-3">
-                <div>
+                <div id='quote-form-container'>
                     {% if quote_form.errors %}
                     {% for field in quote_form %}
                         {% for error in field.errors %} 
-                            <div class="form-error alert alert-danger">
-                            <strong>{{ error|escape }}</strong>
+                            <div class="form-error">
+                                <strong>{{ error|escape }}</strong>
                             </div>
                         {% endfor %}
                     {% endfor %}
@@ -43,25 +43,33 @@
                                         <div class="quote-form-input form-floating input-control">
                                             {{ quote_form.name.label_tag }}
                                             {{ quote_form.name }}
-                                        </div></div>
+                                        </div>
+                                    </div>
                                     <div class="email">
                                         <div class="quote-form-input form-floating input-control">
                                             {{ quote_form.email.label_tag }}
                                             {{ quote_form.email }}
-                                        </div></div>
+                                        </div>
+                                    </div>
                                     <div class="phone">
                                         <div class="quote-form-input form-floating input-control">
                                             {{ quote_form.phone.label_tag }}
                                             {{ quote_form.phone }}
-                                        </div></div>
+                                        </div>
+                                    </div>
                                     <div class="message">
                                         <div class="form-floating">
                                             {{ quote_form.message.label_tag }}
                                             {{ quote_form.message }}
                                         </div>
                                     </div>
+                                    <div class="captcha">
+                                        <div class="quote-form-input form-floating input-control">
+                                            {{ quote_form.captcha }}
+                                        </div>
+                                    </div>
                                     <div class="submit">
-                                        <input type="submit" class="brand-bg-primary" id="quote-submit"></input>
+                                        <input type="submit" class="brand-bg-primary" id="quote-submit" disabled></input>
                                     </div>
                                 </div>
                             </div>
@@ -85,4 +93,10 @@
 
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="https://unpkg.com/friendly-challenge@0.9.10/widget.module.min.js" async defer></script>
+<script nomodule src="https://unpkg.com/friendly-challenge@0.9.10/widget.min.js" async defer></script>
+<script src="/static/mainsite/js/captcha.js" type="text/javascript"></script>
 {% endblock %}

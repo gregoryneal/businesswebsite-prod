@@ -28,6 +28,10 @@ LOGGING = {
         'handlers': ['console'],
         'level': 'WARNING',
     },
+    'django.friendly_captcha': {
+    'handlers': ['default'],
+    'level': 'INFO',
+    }
 }
 
 USE_CART = False 
@@ -189,6 +193,14 @@ EMAIL_PORT = os.environ.get('EMAIL_HOST_PORT')
 # TODO: move this to the keyring before going live on production
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
+# Friendly CAPTCHA settings
+# The API key
+FRC_CAPTCHA_SECRET = os.environ.get('FRC_CAPTCHA_SECRET')
+FRC_CAPTCHA_SITE_KEY = os.environ.get('FRC_CAPTCHA_SITE_KEY')
+FRC_CAPTCHA_VERIFICATION_URL = 'https://api.friendlycaptcha.com/api/v1/siteverify'
+# Fail silent set to True means you have to handle what to do with verification in the forms view
+# Setting False will just cause the form to fail with an error ('Captcha test failed')
+FRC_CAPTCHA_FAIL_SILENT = False
 
 
 # SECURITY WARNING: don't run with debug turned on in production!

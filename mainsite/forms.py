@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import password_validation
 from django.utils.translation import gettext_lazy as _
+from .friendlycaptcha import FrCaptchaField, FrCaptchaWidget
+from django.conf import settings
 
 class LoginForm(forms.Form):
     error_css_class = "login_form_error"
@@ -78,6 +80,8 @@ class QuoteForm(forms.Form):
     message.widget.attrs['id'] = "quote-form-message"
     message.widget.attrs['placeholder'] = "Message"
 
+    captcha = FrCaptchaField(widget=FrCaptchaWidget(attrs={'data-start':'focus'}))
+
     def clean_phone(self):
         pass
 
@@ -103,4 +107,6 @@ class ContactForm(forms.Form):
     message.widget.attrs['class'] = "form-control"
     message.widget.attrs['id'] = "quote-form-message"
     message.widget.attrs['placeholder'] = "Message"
+
+    captcha = FrCaptchaField(widget=FrCaptchaWidget(attrs={'data-start':'focus'}))
 
